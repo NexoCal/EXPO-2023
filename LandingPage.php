@@ -30,16 +30,16 @@ include "databasekey.php";
         <div class="Hero">
             <div class="Slider">
                 <div class="img-container">
-                    <img src="HeroImages/Dawn of the forest.jpeg" alt="">
+                    <img src="assets/images/HeroImages/Dawn of the forest.jpeg" alt="">
                 </div>
                 <div class="img-container">
-                    <img src="HeroImages/The Dusk of the Mountain.png" alt="">
+                    <img src="assets/images/HeroImages/The Dusk of the Mountain.png" alt="">
                 </div>
                 <div class="img-container">
-                    <img src="HeroImages/Tugu.png" alt="">
+                    <img src="assets/images/HeroImages/Tugu.png" alt="">
                 </div>
                 <div class="img-container">
-                    <img src="HeroImages/Another Temple.png" alt="">
+                    <img src="assets/images/HeroImages/Another Temple.png" alt="">
                 </div>
             </div>
             <h1>WELCOME TO YOGYAKARTA</h1>
