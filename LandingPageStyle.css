@@ -74,33 +74,43 @@ header {
   0% {
     right: 0vw;
   }
+
   10% {
     right: 0vw;
   }
+
   20% {
     right: 100vw;
   }
+
   30% {
     right: 100vw;
   }
+
   40% {
     right: 200vw;
   }
+
   50% {
     right: 200vw;
   }
+
   60% {
     right: 200vw;
   }
+
   70% {
     right: 300vw;
   }
+
   80% {
     right: 300vw;
   }
+
   90% {
     right: 300vw;
   }
+
   100% {
     right: 0vw;
   }
@@ -143,6 +153,12 @@ header {
   width: 350px;
   height: 350px;
   overflow: hidden;
+  background: #000000;
+}
+
+.Events-card img{
+  opacity: 0.7;
+  object-fit: cover;
 }
 
 .Events h2 {
@@ -152,4 +168,5 @@ header {
   background-color: transparent;
   color: white;
   font-weight: 700;
+  width: 50%;
 }

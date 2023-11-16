@@ -30,16 +30,16 @@ include "databasekey.php";
         <div class="Hero">
             <div class="Slider">
                 <div class="img-container">
-                    <img src="assets/images/HeroImages/Dawn of the forest.jpeg" alt="">
+                    <img src="assets/image/HeroImages/Dawn of the forest.jpeg" alt="">
                 </div>
                 <div class="img-container">
-                    <img src="assets/images/HeroImages/The Dusk of the Mountain.png" alt="">
+                    <img src="assets/image/HeroImages/The Dusk of the Mountain.png" alt="">
                 </div>
                 <div class="img-container">
-                    <img src="assets/images/HeroImages/Tugu.png" alt="">
+                    <img src="assets/image/HeroImages/Tugu.png" alt="">
                 </div>
                 <div class="img-container">
-                    <img src="assets/images/HeroImages/Another Temple.png" alt="">
+                    <img src="assets/image/HeroImages/Another Temple.png" alt="">
                 </div>
             </div>
             <h1>WELCOME TO YOGYAKARTA</h1>
@@ -53,13 +53,11 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
 {
 ?>
             <div class="Events-card">
-                <img src="Events/<?php echo $row['gambar']; ?> " alt="">
+                <img src="assets/image/Events/<?php echo $row['gambar']; ?> " alt="">
                 <h2><?php echo $row['judul']; ?></h2>
             </div>
             <?php 
 }
-            
-            
             ?>
         </div>
     </main>
