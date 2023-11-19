@@ -3,6 +3,15 @@
   src: url("https://fonts.google.com/specimen/Poppins");
 }
 
+body{
+  overflow-x: hidden;
+  
+}
+
+body::-webkit-scrollbar{
+  display: none;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -25,6 +34,7 @@ header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  padding-left: 10px;
 }
 
 .Nav-list {
@@ -138,6 +148,193 @@ header {
 }
 
 /*===[END OF the HERO]===*/
+
+.Place{
+  padding-top: 60px;
+}
+
+.Place .place-title h2{
+  padding-left: 160px;
+}
+.place-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  width: 100vw;
+  overflow-x: scroll;
+  padding-left: 160px;
+  padding-right: 50px;
+}
+
+.place-container::-webkit-scrollbar{
+  display: none;
+}
+
+.place-card{
+  width: 370px;
+  height: 526px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 7px;
+  background-color: #000000;
+}
+
+.place-card img{
+  opacity: 0.7;
+  width: 100%;
+  height: inherit;
+  object-fit: fill;
+}
+
+.place-card .card-text{
+  display: flex;
+  height: 114px;
+  background: transparent;
+}
+
+.place-card .content .card-text h2{
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 2.36rem;
+  vertical-align: bottom;
+  align-self: flex-end;
+  padding-left: 25px;
+  line-height: 2.36rem;
+}
+
+.place-card .content{
+  position: relative;
+  top: -14vh;
+  background: transparent;
+  height: 188px;
+  transition: 0.7s;
+}
+
+.place-card .content p{
+  position: relative;
+  background-color: transparent;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 500;
+  top: 10%;
+  transition: 0.5s;
+}
+
+.place-card:hover .content{ 
+  top: calc((40% + 16px) * -1);
+  transition: 0.5s;
+}
+
+.place-card:hover .content p{ 
+  top: 1px;
+  transition: 0.7s;
+}
+
+/*===[END OF the PLACE]===*/
+.Things{
+  position: relative;
+  overflow: hidden;
+  height: 447px;
+}
+
+.Things .things-title h2{
+  padding-left: 21.5vw;
+}
+
+.Things .banner-deco{
+  position: relative;
+  top: -369px;
+  background-color: #DBCDCD;
+  width: 102vw;
+  height: 329px;
+  z-index: 0 ;
+  box-shadow: -20px 0px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.Things .things-container{
+  gap: 12px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  background-color: transparent;
+}
+
+.Things .things-container .big-section{
+  width: 412px;
+  height: 412px;
+  overflow: hidden;
+  border-radius: 7px;
+}
+
+.Things .things-container .small-section{
+  display: flex;
+  flex-direction: column;
+  width: 627px;
+  height: 412px;
+  overflow: hidden;
+  border-radius: 7px;
+  gap: 12px;
+}
+
+.Things .things-container .small-section .section-1{
+  display: flex;
+  width: 627px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 7px;
+  gap: 12px;
+}
+
+.Things .things-container .small-section .section-2{
+  display: flex;
+  width: 627px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 7px;
+  gap: 12px;
+}
+
+
+.Things .things-container .small-section .card-long{
+  width: 416px;
+  height: inherit;
+  overflow: hidden;
+  border-radius: 7px;
+}
+
+.Things .things-container .small-section .card-long img{
+  height: inherit;
+  width: 100%;
+  object-fit: fill;
+}
+
+.Things .things-container .small-section .card-small img{
+  height: inherit;
+  width: 100%;
+  object-fit: fill;
+}
+
+.Things .things-container .small-section .card-small{
+  width: 200px;
+  height: inherit;
+  overflow: hidden;
+  border-radius: 7px;
+}
+
+.Things .things-container .big-section img{
+  height: inherit;
+  width: 100%;
+  object-fit: fill;
+}
+
+/*===[END OF the PLACE]===*/
 
 .Events {
   display: flex;
