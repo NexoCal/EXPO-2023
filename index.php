@@ -207,7 +207,7 @@ include "databasekey.php";
                             <div class="Event-img-frame">
                                 <img src="assets/image/Events/<?php echo $row['gambar']; ?> " alt="">
                             </div>
-                            <h3>Lito Fest</h3>
+                            <h3><?php echo $row['judul']; ?></h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                 Molestias dolor vero et quae asperiores vitae.
                             </p>
@@ -233,60 +233,29 @@ include "databasekey.php";
                 <p align="center">Useful and intresting storis to help you on your ADVENTURE</p>
             </div>
             <div class="stories-container">
+                <?php
+                $result = mysqli_query($conn, "SELECT gambar,judul,deskripsi_story FROM `story` ORDER BY id_story DESC");
+                $limiter = 0;
+                while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                ?>
                 <div class="stories-card">
                     <div class="stories-image">
-                        <img src="assets/image/Stories/pinkbunnystuff.png" alt="">
+                        <img src="assets/image/Stories/<?php echo $row['gambar'];?>" alt="">
                     </div>
                     <div class="stories-content">
-                        <h2>Pink Rabbit Stuff?!</h2>
-                        <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, et.</p>
+                        <h2><?php echo $row['judul'];?></h2>
+                        <p style="text-align: justify;"><?php echo $row['deskripsi_story'];?></p>
                         <button>Read more</button>
                     </div>
                 </div>
 
-                <div class="stories-card">
-                    <div class="stories-image">
-                        <img src="assets/image/Stories/pinkbunnystuff.png" alt="">
-                    </div>
-                    <div class="stories-content">
-                        <h2>Pink Rabbit Stuff?!</h2>
-                        <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, et.</p>
-                        <button>Read more</button>
-                    </div>
-                </div>
-
-                <div class="stories-card">
-                    <div class="stories-image">
-                        <img src="assets/image/Stories/pinkbunnystuff.png" alt="">
-                    </div>
-                    <div class="stories-content">
-                        <h2>Pink Rabbit Stuff?!</h2>
-                        <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, et.</p>
-                        <button>Read more</button>
-                    </div>
-                </div>
-
-                <div class="stories-card">
-                    <div class="stories-image">
-                        <img src="assets/image/Stories/pinkbunnystuff.png" alt="">
-                    </div>
-                    <div class="stories-content">
-                        <h2>Pink Rabbit Stuff?!</h2>
-                        <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, et.</p>
-                        <button>Read more</button>
-                    </div>
-                </div>
-
-                <div class="stories-card">
-                    <div class="stories-image">
-                        <img src="assets/image/Stories/pinkbunnystuff.png" alt="">
-                    </div>
-                    <div class="stories-content">
-                        <h2>Pink Rabbit Stuff?!</h2>
-                        <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, et.</p>
-                        <button>Read more</button>
-                    </div>
-                </div>
+                <?php 
+                $limiter = $limiter + 1;
+                if ($limiter == 5){
+                    break;
+                }
+                };
+                ?>
 
             </div>
         </div>
@@ -321,17 +290,17 @@ include "databasekey.php";
             <h3>Follow Us</h3>
             <div class="foot-logo">
                 <div class="logo-container">
-                    <img src="Logo-X.webp" alt="">
+                    <img src="assets/image/Logo/Logo-X.webp" alt="">
 
                 </div>
 
                 <div class="logo-container">
-                    <img src="GitHub_Invertocat_Logo.svg.png" alt="">
+                    <img src="assets/image/Logo/GitHub_Invertocat_Logo.svg.png" alt="">
 
                 </div>
 
                 <div class="logo-container">
-                    <img src="patreon-creators-patreon.png" alt="">
+                    <img src="assets/image/Logo/patreon-creators-patreon.png" alt="">
 
                 </div>
 
