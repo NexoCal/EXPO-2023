@@ -626,7 +626,7 @@ header {
 .stories-card {
   flex-shrink: 0;
   display: flex;
-  gap: 10px;
+  gap: 20px;
   flex-wrap: nowrap;
   flex-direction: row;
   width: 40%;
@@ -652,12 +652,13 @@ header {
   display: flex;
   flex-direction: column;
   padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 10px;
+  padding-bottom: 20px;
+  padding-right: 20px;
 }
 
 .stories-content p {
   height: auto;
+  padding-right: 10px;
   flex-basis: 100%;
 }
 
