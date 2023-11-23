@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Nov 23, 2023 at 08:09 AM
+-- Generation Time: Nov 23, 2023 at 09:00 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -77,6 +77,13 @@ CREATE TABLE `events` (
   `timeline` enum('ongoing','upcoming','','') DEFAULT NULL,
   `id_kategori_event` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`id_events`, `gambar`, `judul`, `tanggal`, `deskripsi`, `timeline`, `id_kategori_event`) VALUES
+(1, 'Lico_fest.png', 'Jogjapanfest by Lico fest', '2023-12-16', '     Lagi - lagi Lico fest menghadirkan acara jejepangan unutk para penikmat budaya jepang di Jogja. Tepatnya berada di Little Tokyo Jogja atau biasa disebut Litto mereka akan mengadakan cultural night ICF Jogjapanfest. Dengan segala macam kegiatan yang bisa dinikmati bagi para pengunjung entah itu lomba, menikmati suasana jejepangan, berburu merchandise, dan lain - lain. \r\n     Acara ini akan berlangsung dari tanggal 16 Desember 2023 sampai dengan 17 Desember 2023. terdapat berbagi macam lomba dan penampilan dari tamu tamu undangan yang telah diundang. Ada Idol lokal dari kota Jogja, DJ, penyanyi solo, serta band. untuk lomba lombanya terdapat coswalk competition, cosplay competition, serta karaoke competition. Maka dari itu mari luangkan waktu kalian untuk menikmati nuansa jejepangan di kota Jogja yang istimewa ini.', 'upcoming', 1);
 
 -- --------------------------------------------------------
 
@@ -183,6 +190,13 @@ CREATE TABLE `kategori_event` (
   `id_kategori_event` int(11) NOT NULL,
   `kategori_event` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `kategori_event`
+--
+
+INSERT INTO `kategori_event` (`id_kategori_event`, `kategori_event`) VALUES
+(1, 'jejepangan');
 
 -- --------------------------------------------------------
 
@@ -350,7 +364,7 @@ ALTER TABLE `daerah_region`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id_events` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_events` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `gambar_region`
@@ -369,6 +383,12 @@ ALTER TABLE `gambar_things`
 --
 ALTER TABLE `hotel`
   MODIFY `id_hotel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT for table `kategori_event`
+--
+ALTER TABLE `kategori_event`
+  MODIFY `id_kategori_event` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `kategori_things`
