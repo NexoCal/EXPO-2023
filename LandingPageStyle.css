@@ -3,6 +3,15 @@
   src: url("https://fonts.google.com/specimen/Poppins");
 }
 
+body {
+  overflow-x: hidden;
+
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -25,6 +34,7 @@ header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  padding-left: 10px;
 }
 
 .Nav-list {
@@ -138,25 +148,426 @@ header {
 }
 
 /*===[END OF the HERO]===*/
+.About{
+  width: 100%;
+  height: calc(100vh - 50%);
+  padding-left: 160px ;
+  padding-right: 160px ;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.About .about-content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+
+.About .about-content .about-image{
+  height: 500px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.About .about-content .about-image img{
+  height: 100%;
+}
+
+.About .about-content .about-desc{
+  align-self: center;
+}
+
+.about-desc p{
+  font-size: 18px;
+}
+
+.about-desc h1{
+  font-size: 48px;
+}
+
+/*===[END OF the HERO]===*/
+.Place {
+  padding-top: 30px;
+  padding-bottom: 60px;
+  background-color: #f7f7f7;
+  .place-title{
+    background-color: #f7f7f7;
+  }
+}
+
+.Place .place-title h2 {
+  padding-left: 160px;
+  font-size: 48px;
+  background-color: transparent;
+}
+
+.Place .place-title p {
+  padding-left: 160px;
+  font-size: 18px;
+  background-color: transparent;
+}
+
+.place-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  width: 100vw;
+  overflow-x: scroll;
+  padding-left: 160px;
+  padding-right: 50px;
+  background-color: #f7f7f7;
+}
+
+.place-container::-webkit-scrollbar {
+  display: none;
+}
+
+.place-card {
+  width: 300px;
+  height: 426px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 7px;
+  background-color: #000000;
+}
+
+.place-card img {
+  opacity: 0.7;
+  width: 100%;
+  height: inherit;
+  object-fit: fill;
+}
+
+.place-card .card-text {
+  display: flex;
+  height: 114px;
+  background: transparent;
+}
+
+.place-card .content .card-text h2 {
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 2.36rem;
+  vertical-align: bottom;
+  align-self: flex-end;
+  padding-left: 25px;
+  line-height: 2.36rem;
+}
+
+.place-card .content {
+  position: relative;
+  top: -140px;
+  background: transparent;
+  height: 188px;
+  transition: 0.7s;
+}
+
+.place-card .content p {
+  position: relative;
+  background-color: transparent;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 500;
+  top: 10%;
+  transition: 0.5s;
+}
+
+.place-card:hover .content {
+  top: calc((48% + 16px) * -1);
+  transition: 0.5s;
+}
+
+.place-card:hover .content p {
+  top: 1px;
+  transition: 0.7s;
+}
+
+/*===[END OF the PLACE]===*/
+.Things {
+  position: relative;
+  overflow: hidden;
+  height: 600px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.Things .things-title h2{
+  font-size: 28px;
+}
+
+.Things .banner-deco {
+  position: relative;
+  top: -369px;
+  background-color: #DBCDCD;
+  width: 102vw;
+  height: 329px;
+  z-index: 0;
+  box-shadow: -20px 0px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.Things .things-container {
+  gap: 12px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  background-color: transparent;
+}
+
+.Things .things-container .big-section {
+  width: 412px;
+  height: 412px;
+  overflow: hidden;
+  border-radius: 7px;
+  background-color: #000000;
+}
+
+
+.Things .things-container .small-section {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  width: 627px;
+  height: 412px;
+  overflow: hidden;
+  border-radius: 7px;
+  gap: 12px;
+}
+
+.Things .things-container .small-section .section-1 {
+  background-color: transparent;
+  display: flex;
+  width: 627px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 7px;
+  gap: 12px;
+}
+
+.Things .things-container .small-section .section-2 {
+  background-color: transparent;
+  display: flex;
+  width: 627px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 7px;
+  gap: 12px;
+}
+
+
+.Things .things-container .small-section .card-long {
+  width: 416px;
+  height: inherit;
+  overflow: hidden;
+  border-radius: 7px;
+  background-color: #000000;
+}
+
+.Things .things-container .small-section .card-long img {
+  height: inherit;
+  width: 100%;
+  object-fit: fill;
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.Things .things-container .small-section .card-long h3 {
+  color: #ffffff;
+  background-color: transparent;
+  position: relative;
+  top: -120px;
+  left: 40%;
+  opacity: 0.0;
+  transition: 0.2s;
+}
+
+.Things .things-container .small-section .card-small h3 {
+  color: #ffffff;
+  background-color: transparent;
+  position: relative;
+  top: -120px;
+  left: 36%;
+  opacity: 0.0;
+  transition: 0.2s;
+}
+
+.Things .things-container .big-section h3 {
+  color: #ffffff;
+  background-color: transparent;
+  position: relative;
+  font-size: 26px;
+  top: -230px;
+  left: 40%;
+  opacity: 0.0;
+  transition: 0.2s;
+}
+
+.Things .things-container .small-section .card-long:hover h3 {
+  color: #ffffff;
+  background-color: transparent;
+  position: relative;
+  top: -120px;
+  left: 40%;
+  opacity: 1.0;
+  transition: 0.5s;
+}
+
+.Things .things-container .small-section .card-small:hover h3 {
+  color: #ffffff;
+  background-color: transparent;
+  position: relative;
+  top: -120px;
+  left: 36%;
+  opacity: 1.0;
+  transition: 0.5s;
+}
+
+.Things .things-container .big-section:hover h3 {
+  color: #ffffff;
+  background-color: transparent;
+  position: relative;
+  top: -230px;
+  left: 40%;
+  opacity: 1.0;
+  transition: 0.5s;
+}
+
+
+
+.Things .things-container .small-section .card-long:hover img {
+  height: inherit;
+  width: 100%;
+  object-fit: fill;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.Things .things-container .small-section .card-small img {
+  height: inherit;
+  width: 100%;
+  object-fit: fill;
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.Things .things-container .small-section .card-small:hover img {
+  height: inherit;
+  width: 100%;
+  object-fit: fill;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.Things .things-container .small-section .card-small {
+  width: 200px;
+  height: inherit;
+  overflow: hidden;
+  border-radius: 7px;
+  background-color: #000000;
+}
+
+.Things .things-container .big-section img {
+  height: inherit;
+  width: 100%;
+  object-fit: fill;
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.Things .things-container .big-section:hover img {
+  height: inherit;
+  width: 100%;
+  object-fit: fill;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+/*===[END OF the THINGS]===*/
 
 .Events {
   display: flex;
+  flex-direction: column;
   width: 100vw;
-  height: calc(100vw - 74.8vw);
+  height: max-content;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  padding-top: 30px;
+  padding-bottom: 60px;
+  gap: 20px;
+  background-color: #f7f7f7;
+}
+
+.event-container{
+  display: flex;
+  width: 100vw;
+  justify-content: space-evenly;
+  background-color: transparent;
+}
+
+.event-card-container{
+  position: relative;
+  
 }
 
 .Events-card {
+  position: relative;
   width: 350px;
   height: 350px;
   overflow: hidden;
   background: #000000;
+  z-index: 1;
+  transition: 0.5s;
 }
 
-.Events-card img{
+.Events-card:hover{
+  width: 350px;
+  height: 350px;
+  overflow: hidden;
+  background: #000000;
+  opacity: 0.0;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.Events-card-hover {
+  position: absolute;
+  top: 0%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 350px;
+  height: 350px;
+  overflow: hidden;
+  gap: 0px;
+  padding: 10px 10px 10px 10px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+  z-index: 0;
+}
+
+
+
+.Events-card-hover .Event-img-frame{
+  height: 50%;
+  overflow: hidden;
+  
+}
+.Events-card-hover .Event-img-frame img{
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  top: -50%;
+  
+}
+
+.Events-card img {
   opacity: 0.7;
   object-fit: cover;
 }
@@ -169,4 +580,179 @@ header {
   color: white;
   font-weight: 700;
   width: 70%;
+  background-color: transparent;
+}
+
+.Events .Event-title, .Event-title h1, p{
+  background-color: transparent;
+}
+
+/*===[END OF the EVENTS]===*/
+.Stories{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  flex-direction: column;
+}
+
+.stories-title{
+  flex-shrink: 0;
+}
+
+.stories-title h1{
+  font-size: 58px;
+  background-color: transparent;
+}
+
+.stories-title p{
+  font-size: 18px;
+  background-color: transparent;
+}
+
+
+
+.stories-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  padding-top: 30px;
+}
+
+.stories-card {
+  flex-shrink: 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  width: 40%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 7px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+.stories-image {
+  width: 208px;
+  height: inherit;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.stories-image img {
+  height: inherit;
+  object-fit: cover;
+}
+
+.stories-content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+.stories-content p {
+  height: auto;
+  flex-basis: 100%;
+}
+
+.stories-content button{
+    background-color: rgb(233, 190, 111);
+    color: #000000;
+    font-size: 18px;
+    font-weight: 700;
+    border-style: none;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+
+.stories-content button:hover{
+  background-color: rgb(235, 217, 183);
+  color: #2f2f2f;
+  font-size: 18px;
+  font-weight: 700;
+  border-style: none;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+}
+
+/*===[END OF the STORIES]===*/
+
+.foot-container{
+  background-color: rgb(233, 190, 111);
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+.foot-container .foot-img{
+  flex-basis: 25%;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.foot-container .foot-img img{
+  width: 100%;
+  background-color: transparent;
+  
+}
+
+.foot-container .foot-links, .foot-addr{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 25%;
+  background-color: transparent;
+}
+
+.foot-container h3, li, a, ul, .links , .addr-info{
+  background-color: transparent;
+  list-style-type: none;
+}
+
+.foot-container ul{
+  width: 50%;
+}
+
+.foot-media{
+  background-color: transparent;
+}
+
+.foot-media h3{
+  background-color: transparent;
+  padding-bottom: 10px;
+}
+
+.foot-logo{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  background-color: transparent;
+  padding-bottom: calc(10vh - 21%);
+  gap: 10px;
+}
+
+.foot-logo .logo-container{
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  background-color: transparent;
+  border-radius: 50px;
+  
+}
+
+.foot-logo .logo-container img{
+  width: 100%;
+  background-color: transparent;
 }
