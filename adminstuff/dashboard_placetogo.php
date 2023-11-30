@@ -11,7 +11,7 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Stories</h1>
+                    <h1 class="m-0">Place To Go</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -30,10 +30,11 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                    <div class="card-header card-header-custom">
-                            <h3>Daftar Stories</h3>
+                        <div class="card-header card-header-custom">
+                            <h3>Daftar Place</h3>
                             <div class="custom-container">
                                 <a href=""><button class="btn btn-primary btn-sm button-top">Add</button></a>
+                                <a href=""><button class="btn btn-primary btn-sm button-top">Show Region Table</button></a>
                             </div>
                         </div>
                         <div class="card-body">
