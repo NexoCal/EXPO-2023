@@ -31,7 +31,7 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header card-header-custom">
-                            <h3>Daftar Place</h3>
+                            <h3>List of Places</h3>
                             <div class="custom-container">
                                 <a href=""><button class="btn btn-primary btn-sm button-top">Add</button></a>
                                 <a href=""><button class="btn btn-primary btn-sm button-top">Show Region Table</button></a>

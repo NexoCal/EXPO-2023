@@ -31,9 +31,9 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
                 <div class="col-md-12">
                     <div class="card">
                     <div class="card-header card-header-custom">
-                            <h3>Daftar Stories</h3>
+                            <h3>List of Stories</h3>
                             <div class="custom-container">
-                                <a href=""><button class="btn btn-primary btn-sm button-top">Add</button></a>
+                                <a href="formStories.php"><button class="btn btn-primary btn-sm button-top">Add</button></a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -58,8 +58,8 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
                                             <td><?php echo $rows['id_story']; ?></td>
                                             <td><?php echo $rows['judul']; ?></td>
                                             <td><?php echo $rows['deskripsi_story']; ?></td>
-                                            <td><a style="color: white;" href=""><button class="btn btn-primary btn-sm edit-button">Edit</button></a></td>
-                                            <td><a style="color: white;" href=""><button class="btn btn-primary btn-sm delete-button">Delete</button></a></td>
+                                            <td><a style="color: white;" href="formStories.php?id=<?php echo $rows['id_story'];?>"><button class="btn btn-primary btn-sm edit-button">Edit</button></a></td>
+                                            <td><a style="color: white;" href="deleteitem.php?id=<?php echo $rows['id_story'];?>&table=story"><button class="btn btn-primary btn-sm delete-button">Delete</button></a></td>
                                         </tr>
                                     <?php
                                         $nomor = $nomor + 1;

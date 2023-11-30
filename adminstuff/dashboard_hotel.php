@@ -11,7 +11,7 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Events</h1>
+                    <h1 class="m-0">Hotels</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -31,10 +31,9 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header card-header-custom">
-                            <h3>List of Events</h3>
+                            <h3>List of Hotels</h3>
                             <div class="custom-container">
-                                <a href="formEvents.php"><button class="btn btn-primary btn-sm button-top">Add</button></a>
-                                <a href=""><button class="btn btn-primary btn-sm button-top">Show Event Category Table</button></a>
+                                <a href="formHotel.php"><button class="btn btn-primary btn-sm button-top">Add</button></a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -43,30 +42,28 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
                                     <tr>
                                         <th style="width: 5%"> NO</th>
                                         <th style="width: 5%"> ID</th>
-                                        <th> JUDUL</th>
-                                        <th> TANGGAL</th>
-                                        <th> STATUS</th>
-                                        <th> KATEGORI</th>
+                                        <th> NAMA</th>
+                                        <th> ALAMAT</th>
+                                        <th> KONTAK</th>
+                                        <th> KABUPATEN</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
                                     <?php
                                     $nomor = 1;
-                                    $results = mysqli_query($conn, "SELECT e.id_events,e.judul,e.deskripsi,e.tanggal,e.timeline, k.kategoriEvent FROM events e join kategori_event k on (e.id_kategori_event=k.id_kategori_event) ORDER BY e.id_events DESC");
+                                    $results = mysqli_query($conn, "SELECT id_hotel, nama, alamat, contact, kabupaten FROM hotel ORDER BY id_hotel DESC");
                                     while ($rows = mysqli_fetch_array($results, MYSQLI_ASSOC)) {
                                     ?>
                                         <tr>
                                             <td><?php echo $nomor; ?></td>
-                                            <td><?php echo $rows['id_events']; ?></td>
-                                            <td><?php echo $rows['judul']; ?></td>
-                                            <td><?php echo $rows['tanggal']; ?></td>
-                                            <td><?php echo $rows['timeline']; ?></td>
-                                            <td><?php echo $rows['kategoriEvent']; ?></td>
-                                            <td style="width: 11%;">
-                                                <a style="color: white;" href="formEvents.php?id=<?php echo $rows['id_events']; ?>"><button class="btn btn-primary btn-sm edit-button">Edit</button></a>
-                                                <a style="color: white;" href="deleteitem.php?id=<?php echo $rows['id_events']; ?>&table=events"><button class="btn btn-primary btn-sm delete-button">Delete</button></a>
-                                            </td>
+                                            <td><?php echo $rows['id_hotel']; ?></td>
+                                            <td><?php echo $rows['nama']; ?></td>
+                                            <td><?php echo $rows['alamat']; ?></td>
+                                            <td><?php echo $rows['contact']; ?></td>
+                                            <td><?php echo $rows['kabupaten']; ?></td>
+                                            <td><a style="color: white;" href="formHotel.php?id=<?php echo $rows['id_hotel']; ?>"><button class="btn btn-primary btn-sm edit-button">Edit</button></a></td>
+                                            <td><a style="color: white;" href="deleteitem.php?id=<?php echo $rows['id_hotel']; ?>&table=hotel"><button class="btn btn-primary btn-sm delete-button">Delete</button></a></td>
                                         </tr>
                                     <?php
                                         $nomor = $nomor + 1;
@@ -124,7 +121,6 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
             });
         });
     </script>
-
     </body>
 
     </html>
