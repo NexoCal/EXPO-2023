@@ -1,0 +1,180 @@
+body {
+    font-family: "Poppins";
+}
+header {
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+}
+img,
+li,
+a {
+    background-color: #f3f3f3;
+    text-decoration: none;
+    font-weight: 600;
+    color: #000000;
+    font-family: "Poppins";
+  }
+/*awal navbar ambil dari @adrian*/
+.Nav-list {
+    background-color: #f3f3f3;
+    list-style-type: none;
+}
+  
+.Nav-list li {
+    display: inline-block;
+    padding-left: 40px;
+}
+  
+.Nav-list li a {
+    transition: all 0.2s ease 0s;
+}
+  
+.Nav-list li a:hover {
+    color: #7f5c5c;
+}/*akhir dari navbar*/
+/*Awal dari main @Alfian*/
+ .Hero {
+    width: 100vw;
+    height: calc(100vw - 65vw);
+    overflow: hidden;
+    background-color: #000000;
+}
+/*buat nambahin texs di dalam gambar*/
+.text-overlay {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Poppins";
+
+}
+
+ 
+
+ .card{
+    width: 300px;
+    height: 350px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    float: left;
+ }
+ .container {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+   
+    
+ } /*buat geser tapi belum jadi*/
+
+ .card-text{
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Poppins";
+
+ }
+
+ .card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ }
+ .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+    margin: auto;
+}/*akhir dari main*/
+ 
+ 
+/*awal dari footer @adrian*/
+.foot-container{
+    background-color: rgb(233, 190, 111);
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+  
+.foot-container .foot-img{
+    flex-basis: 25%;
+    overflow: hidden;
+    background-color: transparent;
+}
+  
+.foot-container .foot-img img{
+    width: 100%;
+    background-color: transparent;
+    
+}
+  
+.foot-container .foot-links, .foot-addr{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25%;
+    background-color: transparent;
+}
+  
+.foot-container h3, li, a, ul, .links , .addr-info{
+    background-color: transparent;
+    list-style-type: none;
+}
+  
+.foot-container ul{
+    width: 50%;
+}
+  
+.foot-media{
+    background-color: transparent;
+}
+  
+.foot-media h3{
+    background-color: transparent;
+    padding-bottom: 10px;
+}
+  
+.foot-logo{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    background-color: transparent;
+    padding-bottom: calc(10vh - 21%);
+    gap: 10px;
+}
+  
+.foot-logo .logo-container{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    background-color: transparent;
+    border-radius: 50px;
+    
+}
+  
+.foot-logo .logo-container img{
+    width: 100%;
+    background-color: transparent;
+}/*akhir dari footer*/
+  
+  
