@@ -1,0 +1,44 @@
+.card-header-custom{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.card-header-custom h3{
+    margin: 0px;
+    font-size: 18px;
+    width: 20%;
+}
+
+.custom-container{
+    display: flex;
+    width:80%;
+    flex-wrap: nowrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: end;
+}
+
+.edit-button{
+    background-color: rgb(69, 193, 63);
+    border-color: rgb(69, 193, 63);
+    transition: 0.3s;
+}
+
+.edit-button:hover{
+    background-color: rgb(139, 214, 73);
+    border-color: rgb(139, 214, 73);
+    transition: 0.3s;
+}
+
+.delete-button{
+    background-color: rgb(193, 63, 63);
+    border-color: rgb(193, 63, 63);
+    transition: 0.3s;
+}
+
+.delete-button:hover{
+    background-color: rgb(216, 116, 116);
+    border-color: rgb(216, 116, 116);
+    transition: 0.3s;
+}

@@ -10,7 +10,13 @@ include "databasekey.php"
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="LandingPageStyle.css">
+    <link rel="stylesheet" href="Style/Landing/LandingPageStyle.css">
+    <link rel="stylesheet" href="Style/Landing/LandingStory.css">
+    <link rel="stylesheet" href="Style/Landing/LandingEvents.css">
+    <link rel="stylesheet" href="Style/Landing/LandingHeroStyle.css">
+    <link rel="stylesheet" href="Style/Landing/LandingPlaceStyle.css">
+    <link rel="stylesheet" href="Style/Landing/LandingAboutStyle.css">
+    <link rel="stylesheet" href="Style/Landing/footer.css">
     <title>Visit Yogyakarta</title>
 </head>
 
@@ -197,7 +203,8 @@ include "databasekey.php"
             </div>
             <div class="event-container">
                 <?php
-                $result = mysqli_query($conn, "SELECT gambar,judul FROM `events` ORDER BY id_events DESC");
+                $counter = 0;
+                $result = mysqli_query($conn, "SELECT gambar,judul FROM `events` ORDER BY tanggal DESC");
                 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                 ?>
                     <div class="event-card-container">
@@ -222,6 +229,10 @@ include "databasekey.php"
 
 
                 <?php
+                $counter = $counter + 1;
+                if ($counter == 3){
+                    break;
+                }
                 }
                 ?>
             </div>
