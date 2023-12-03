@@ -1,5 +1,7 @@
 <?php
-include "databasekey.php";
+
+include "databasekey.php"
+
 ?>
 
 <!DOCTYPE html>
