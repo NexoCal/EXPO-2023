@@ -1,0 +1,179 @@
+  .Place {
+    padding-top: 30px;
+    padding-bottom: 60px;
+    background-color: #f7f7f7;
+    .place-title{
+      background-color: #f7f7f7;
+    }
+  }
+  
+  .Place .place-title h2 {
+    padding-left: 160px;
+    font-size: 48px;
+    background-color: transparent;
+  }
+  
+  .Place .place-title p {
+    padding-left: 160px;
+    font-size: 18px;
+    background-color: transparent;
+  }
+  
+  .place-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    width: 100vw;
+    overflow-x: scroll;
+    padding-left: 160px;
+    padding-right: 50px;
+    background-color: #f7f7f7;
+  }
+  
+  .place-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .place-card {
+    width: 300px;
+    height: 426px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border-radius: 7px;
+    background-color: #000000;
+  }
+  
+  .place-card img {
+    opacity: 0.7;
+    width: 100%;
+    height: inherit;
+    object-fit: fill;
+  }
+  
+  .place-card .card-text {
+    display: flex;
+    height: 114px;
+    background: transparent;
+  }
+  
+  .place-card .content .card-text h2 {
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 2.36rem;
+    vertical-align: bottom;
+    align-self: flex-end;
+    padding-left: 25px;
+    line-height: 2.36rem;
+  }
+  
+  .place-card .content {
+    position: relative;
+    top: -140px;
+    background: transparent;
+    height: 188px;
+    transition: 0.7s;
+  }
+  
+  .place-card .content p {
+    position: relative;
+    background-color: transparent;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 500;
+    top: 10%;
+    transition: 0.5s;
+  }
+  
+  .place-card:hover .content {
+    top: calc((48% + 16px) * -1);
+    transition: 0.5s;
+  }
+  
+  .place-card:hover .content p {
+    top: 1px;
+    transition: 0.7s;
+  }
+
+  @media screen and (max-width: 873px){
+
+    .Place {
+      padding-top: 30px;
+      padding-bottom: 60px;
+      background-color: #f7f7f7;
+      .place-title{
+        background-color: #f7f7f7;
+      }
+    }
+
+    .Place .place-title h2 {
+      padding-left: 60px;
+      font-size: 48px;
+      background-color: transparent;
+    }
+    
+    .Place .place-title p {
+      padding-left: 60px;
+      font-size: 18px;
+      background-color: transparent;
+    }
+    
+    .place-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+      width: 100vw;
+      overflow-x: scroll;
+      padding-left: 60px;
+      padding-right: 50px;
+      background-color: #f7f7f7;
+    }
+    
+    
+  }
+
+  @media screen and (max-width: 490px){
+    .Place {
+      padding-top: 30px;
+      padding-bottom: 60px;
+      background-color: #f7f7f7;
+      .place-title{
+        background-color: #f7f7f7;
+      }
+    }
+
+    .Place .place-title h2 {
+      padding-left: 60px;
+      font-size: 48px;
+      background-color: transparent;
+    }
+    
+    .Place .place-title p {
+      padding-left: 60px;
+      font-size: 18px;
+      background-color: transparent;
+    }
+    
+    .place-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+      width: 100vw;
+      overflow-x: scroll;
+      padding-left: 60px;
+      padding-right: 50px;
+      background-color: #f7f7f7;
+    }
+    
+  }

@@ -84,7 +84,7 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
                                         <br>
                                         <div>
                                             <button style="width: 10%;" type="submit" value="events" name="submit-button" id="buttons">Submit</button>
-                                            <a href="dashboard_events.php"><button style="width: 10%;" value="cancel-event" name="submit-button" id="buttons">Cancel</button></a>
+                                            <a href="dashboard_events.php"><button style="width: 10%;" value="cancel-event" name="cancel-button" id="buttons">Cancel</button></a>
                                         </div>
                                     </div>
 
@@ -123,7 +123,7 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
                                         <br>
                                         <div>
                                             <button style="width: 10%;" type="submit" value="events" name="submit-button" id="buttons">Submit</button>
-                                            <a href="dashboard_events.php"><button style="width: 10%;" value="cancel-event" name="submit-button" id="buttons">Cancel</button></a>
+                                            <a href="dashboard_events.php"><button style="width: 10%;" value="cancel-event" name="cancel-button" id="buttons">Cancel</button></a>
                                         </div>
                                     </div>
                                 </form>

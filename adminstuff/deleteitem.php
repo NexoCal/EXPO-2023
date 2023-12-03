@@ -15,6 +15,7 @@ if (isset($_GET['id'])) {
             } else {
                 echo "Error: " . $sql . "<br>" . mysqli_error($conn);
             }
+            break;
         case ('story'):
             $selectedID = $_GET['id'];
             $sql = "DELETE FROM `story` WHERE id_story = $selectedID";
@@ -23,6 +24,7 @@ if (isset($_GET['id'])) {
             } else {
                 echo "Error: " . $sql . "<br>" . mysqli_error($conn);
             }
+            break;
         case ('hotel'):
             $selectedID = $_GET['id'];
             $sql = "DELETE FROM `hotel` WHERE id_hotel = $selectedID";
@@ -31,5 +33,6 @@ if (isset($_GET['id'])) {
             } else {
                 echo "Error: " . $sql . "<br>" . mysqli_error($conn);
             }
+            break;
     }
 }

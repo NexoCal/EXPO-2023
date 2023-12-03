@@ -43,12 +43,6 @@
                                     <p>Place To Go</p>
                                 </a>
                             </li>
-                            <li class="nav-item" data-widget="pushmenu">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Activity</p>
-                                </a>
-                            </li>
                             <li class="nav-item">
                                 <a href="dashboard_events.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>

@@ -3,6 +3,10 @@
 include "sideheader.php";
 include "C:/xampp/htdocs/EXPO2023/databasekey.php";
 
+unset($_SESSION['ord-events']);
+unset($_SESSION['ord-story']);
+unset($_SESSION['ord-place']);
+
 ?>
 
 <div class="content-wrapper">
@@ -52,7 +56,7 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
 
                                     <?php
                                     $nomor = 1;
-                                    $results = mysqli_query($conn, "SELECT id_hotel, nama, alamat, contact, kabupaten FROM hotel ORDER BY id_hotel DESC");
+                                    $results = mysqli_query($conn, "SELECT id_hotel, nama, alamat, contact, kabupaten FROM hotel ORDER BY id_hotel ASC");
                                     while ($rows = mysqli_fetch_array($results, MYSQLI_ASSOC)) {
                                     ?>
                                         <tr>

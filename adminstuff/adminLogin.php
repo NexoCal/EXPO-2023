@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <img src="assets/image/HeroImages/The Dusk of the Mountain.png" alt="">
+        <img src="../assets/image/HeroImages/The Dusk of the Mountain.png" alt="">
         <div class="image">
         <img src="Logo.svg" alt="">
         </div>

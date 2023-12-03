@@ -3,6 +3,65 @@
 include "sideheader.php";
 include "C:/xampp/htdocs/EXPO2023/databasekey.php";
 
+session_start();
+unset($_SESSION['ord-hotel']);
+unset($_SESSION['ord-story']);
+unset($_SESSION['ord-place']);
+
+
+
+
+$sql = "SELECT e.id_events,e.judul,e.deskripsi,e.tanggal,e.timeline, k.kategori_event FROM events e join kategori_event k on (e.id_kategori_event=k.id_kategori_event) ORDER BY e.id_events ASC";
+if(isset($_GET['sort'])){
+    $sort = $_GET['sort'];
+    if ($_SESSION['ord-events'] == 3){
+        $_SESSION['ord-events'] = 0;  
+    }
+    $ord = $_SESSION['ord-events'];
+    switch ($sort){
+        case 'id':
+            if($ord == 0){
+                $sql = "SELECT e.id_events,e.judul,e.deskripsi,e.tanggal,e.timeline, k.kategori_event FROM events e join kategori_event k on (e.id_kategori_event=k.id_kategori_event) ORDER BY e.id_events ASC";
+                $_SESSION['ord-events'] = 1;
+            }else{
+                $sql = "SELECT e.id_events,e.judul,e.deskripsi,e.tanggal,e.timeline, k.kategori_event FROM events e join kategori_event k on (e.id_kategori_event=k.id_kategori_event) ORDER BY e.id_events DESC";
+                $_SESSION['ord-events'] = 0;
+            }
+            break;
+        case 'judul':
+            if($ord == 0){
+                $sql = "SELECT e.id_events,e.judul,e.deskripsi,e.tanggal,e.timeline, k.kategori_event FROM events e join kategori_event k on (e.id_kategori_event=k.id_kategori_event) ORDER BY e.judul ASC";
+                $_SESSION['ord-events'] = 1;
+            }else{
+                $sql = "SELECT e.id_events,e.judul,e.deskripsi,e.tanggal,e.timeline, k.kategori_event FROM events e join kategori_event k on (e.id_kategori_event=k.id_kategori_event) ORDER BY e.judul DESC";
+                $_SESSION['ord-events'] = 0;
+            }
+            break;
+        case 'tanggal':
+            if($ord == 0){
+                $sql = "SELECT e.id_events,e.judul,e.deskripsi,e.tanggal,e.timeline, k.kategori_event FROM events e join kategori_event k on (e.id_kategori_event=k.id_kategori_event) ORDER BY e.tanggal ASC";
+                $_SESSION['ord-events'] = 1;
+            }else{
+                $sql = "SELECT e.id_events,e.judul,e.deskripsi,e.tanggal,e.timeline, k.kategori_event FROM events e join kategori_event k on (e.id_kategori_event=k.id_kategori_event) ORDER BY e.tanggal DESC";
+                $_SESSION['ord-events'] = 0;
+            }
+            break;
+        case 'status':
+            if($ord == 0){
+                $sql = "SELECT e.id_events,e.judul,e.deskripsi,e.tanggal,e.timeline, k.kategori_event FROM events e join kategori_event k on (e.id_kategori_event=k.id_kategori_event) ORDER BY e.timeline ASC";
+                $_SESSION['ord-events'] = 1;
+            }else{
+                $sql = "SELECT e.id_events,e.judul,e.deskripsi,e.tanggal,e.timeline, k.kategori_event FROM events e join kategori_event k on (e.id_kategori_event=k.id_kategori_event) ORDER BY e.timeline DESC";
+                $_SESSION['ord-events'] = 0;
+            }
+            break;
+    }
+
+}
+
+
+
+
 ?>
 
 <div class="content-wrapper">
@@ -42,27 +101,27 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
                                 <thead>
                                     <tr>
                                         <th style="width: 5%"> NO</th>
-                                        <th style="width: 5%"> ID</th>
-                                        <th> JUDUL</th>
-                                        <th> TANGGAL</th>
-                                        <th> STATUS</th>
-                                        <th> KATEGORI</th>
+                                        <th style="width: 5%"><a href="dashboard_events.php?sort=id" style="color: black;"> ID</a></th>
+                                        <th><a href="dashboard_events.php?sort=judul" style="color: black;"> JUDUL</a></th>
+                                        <th><a href="dashboard_events.php?sort=tanggal" style="color: black;"> TANGGAL</a></th>
+                                        <th><a href="dashboard_events.php?sort=status" style="color: black;"> STATUS</a></th>
+                                        <th><a> KATEGORI</a></th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
                                     <?php
                                     $nomor = 1;
-                                    $results = mysqli_query($conn, "SELECT e.id_events,e.judul,e.deskripsi,e.tanggal,e.timeline, k.kategoriEvent FROM events e join kategori_event k on (e.id_kategori_event=k.id_kategori_event) ORDER BY e.id_events DESC");
+                                    $results = mysqli_query($conn, $sql);
                                     while ($rows = mysqli_fetch_array($results, MYSQLI_ASSOC)) {
                                     ?>
                                         <tr>
                                             <td><?php echo $nomor; ?></td>
                                             <td><?php echo $rows['id_events']; ?></td>
-                                            <td><?php echo $rows['judul']; ?></td>
+                                            <td style="width: 600px;"><?php echo $rows['judul']; ?></td>
                                             <td><?php echo $rows['tanggal']; ?></td>
                                             <td><?php echo $rows['timeline']; ?></td>
-                                            <td><?php echo $rows['kategoriEvent']; ?></td>
+                                            <td><?php echo $rows['kategori_event']; ?></td>
                                             <td style="width: 11%;">
                                                 <a style="color: white;" href="formEvents.php?id=<?php echo $rows['id_events']; ?>"><button class="btn btn-primary btn-sm edit-button">Edit</button></a>
                                                 <a style="color: white;" href="deleteitem.php?id=<?php echo $rows['id_events']; ?>&table=events"><button class="btn btn-primary btn-sm delete-button">Delete</button></a>

@@ -44,7 +44,7 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
                             <?php
                             if (isset($_GET['id'])) {
                                 $selectID = $_GET['id'];
-                                $results = mysqli_query($conn, "SELECT e.id_events, e.gambar,e.judul,e.deskripsi,e.tanggal,e.timeline, k.kategoriEvent FROM events e join kategori_event k on (e.id_kategori_event=k.id_kategori_event) WHERE e.id_events = '$selectID'");
+                                $results = mysqli_query($conn, "SELECT e.id_events, e.gambar,e.judul,e.deskripsi,e.tanggal,e.timeline, k.kategori_event FROM events e join kategori_event k on (e.id_kategori_event=k.id_kategori_event) WHERE e.id_events = '$selectID'");
                                 $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
                             ?>
                                 <form action="edititem.php" method="post">
@@ -61,30 +61,28 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
 
                                         <label for="">Status</label>
                                         <select name="stat" id="stat">
-                                            <option value="ON GOING" <?php if ($row['timeline'] == "ON GOING") echo ' selected="selected"'; ?>>ON GOING</option>
+                                            <option value="ONGOING" <?php if ($row['timeline'] == "ONGOING") echo ' selected="selected"'; ?>>ON GOING</option>
                                             <option value="UPCOMING" <?php if ($row['timeline'] == "UPCOMING") echo ' selected="selected"'; ?>>UPCOMING</option>
                                         </select>
 
                                         <label for="">Deskripsi</label>
-                                        <textarea name="deskrip" id="deskrip" cols="80" rows="5">
-                                            <?php echo $row['deskripsi'] ?>
-                                        </textarea>
+                                        <textarea name="deskrip" id="deskrip" cols="80" rows="5"><?php echo $row['deskripsi'] ?></textarea>
 
                                         <label for="">Kategori</label>
                                         <select name="kat" id="kat">
-                                            <option value="jejepangan" <?php if ($row['kategoriEvent'] == "jejepangan") {
+                                            <option value="modern" <?php if ($row['kategori_event'] == "modern") {
                                                                             echo 'selected="selected"';
-                                                                        } ?>>Jejepangan</option>
-                                            <option value=""></option>
-                                            <option value=""></option>
-                                            <option value=""></option>
+                                                                        } ?>>Modern</option>
+                                            <option value="tradisional" <?php if ($row['kategori_event'] == "tradisional") {
+                                                                            echo 'selected="selected"';
+                                                                        } ?>>Tradisional</option>
                                         </select>
                                         <br>
                                         <br>
                                         <br>
                                         <div>
                                             <button style="width: 10%;" type="submit" value="events" name="submit-button" id="buttons">Submit</button>
-                                            <a href="dashboard_events.php"><button style="width: 10%;" value="cancel-event" name="submit-button" id="buttons">Cancel</button></a>
+                                            <a href="dashboard_events.php"><button style="width: 10%;" value="cancel-event" name="cancel-button" id="buttons">Cancel</button></a>
                                         </div>
                                     </div>
 
@@ -104,8 +102,8 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
 
                                         <label for="">Status</label>
                                         <select name="stat" id="stat">
-                                            <option value="On Going">ON GOING</option>
-                                            <option value="Upcoming">UPCOMING</option>
+                                            <option value="ONGOING">ON GOING</option>
+                                            <option value="UPCOMING">UPCOMING</option>
                                         </select>
 
                                         <label for="">Deskripsi</label>
@@ -113,17 +111,15 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
 
                                         <label for="">Kategori</label>
                                         <select name="kat" id="kat">
-                                            <option value="jejepangan">Jejepangan</option>
-                                            <option value=""></option>
-                                            <option value=""></option>
-                                            <option value=""></option>
+                                            <option value="modern">Modern</option>
+                                            <option value="tradisional">Tradisional</option>
                                         </select>
                                         <br>
                                         <br>
                                         <br>
                                         <div>
                                             <button style="width: 10%;" type="submit" value="events" name="submit-button" id="buttons">Submit</button>
-                                            <a href="dashboard_events.php"><button style="width: 10%;" value="cancel-event" name="submit-button" id="buttons">Cancel</button></a>
+                                            <a href="dashboard_events.php"><button style="width: 10%;" value="cancel-event" name="cancel-button" id="buttons">Cancel</button></a>
                                         </div>
                                     </div>
                                 </form>
