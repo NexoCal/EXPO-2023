@@ -1,0 +1,265 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("https://fonts.google.com/specimen/Poppins");
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(255, 255, 255);
+  font-family: "Poppins";
+}
+
+img,
+li,
+a {
+  background-color: #f3f3f3;
+  text-decoration: none;
+  font-weight: 600;
+  color: #000000;
+}
+
+header {
+  background-color: #f3f3f3;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Nav-list {
+  background-color: #f3f3f3;
+  list-style-type: none;
+}
+
+.Nav-list li {
+  display: inline-block;
+  padding-left: 40px;
+}
+
+.Nav-list li a {
+  transition: all 0.2s ease 0s;
+}
+
+.Nav-list li a:hover {
+  color: #7f5c5c;
+}
+
+/*===[END OF NAVBAR CSS]===*/
+
+/*  */
+body {
+  background-color: rgba(243, 243, 243, 1);
+  font-family: "Poppins";
+  src: url("https://fonts.google.com/specimen/Poppins");
+}
+.comment {
+  background-color: rgba(73, 0, 0, 1);
+  text-align: left;
+  text-align: justify;
+  width: 100%;
+  padding: 50px 173px 50px 173px;
+  color: white;
+  font-family: "Poppins";
+  src: url("https://fonts.google.com/specimen/Poppins");
+}
+.comment h1 {
+  background-color: rgba(73, 0, 0, 1);
+  padding-bottom: 10px;
+  font-size: 38px;
+  font-family: "Poppins";
+  src: url("https://fonts.google.com/specimen/Poppins");
+}
+.comment p {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  background-color: rgba(73, 0, 0, 1);
+  font-family: "Poppins";
+  src: url("https://fonts.google.com/specimen/Poppins");
+}
+/* end comment */
+section {
+  /* width: 100%; */
+  display: flex;
+  padding: 0px 10px 20px 15px;
+  background-color: rgba(243, 243, 243, 1);
+}
+/* filter */
+.bgcolor {
+  background-color: rgba(243, 243, 243, 1);
+}
+.filter {
+  background-color: rgba(243, 243, 243, 1);
+}
+.filter h2 {
+  background-color: rgba(243, 243, 243, 1);
+  padding: 5px;
+  font-family: "Poppins";
+  src: url("https://fonts.google.com/specimen/Poppins");
+}
+.btn {
+  border: none;
+  border-radius: 10px;
+  font-family: "Poppins";
+  src: url("https://fonts.google.com/specimen/Poppins");
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 2);
+  font-size: 18px;
+  padding: 10px;
+  width: 200px;
+  text-align: left;
+}
+
+/* end filter */
+
+/* hotel */
+.hotels {
+  max-width: 100%;
+  background-color: rgba(243, 243, 243, 1);
+  padding-left: 50px;
+  padding-bottom: 10px;
+}
+.content img {
+  width: 150px;
+  height: 150px;
+  align-items: center;
+}
+.content {
+  padding: 20px;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  border-radius: 10px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 2);
+  width: 1100px;
+  overflow: hidden;
+}
+.content h2 {
+  padding: 10px 10px 10px 20px;
+  font-family: "Poppins";
+  src: url("https://fonts.google.com/specimen/Poppins");
+}
+.content p {
+  padding: 10px 10px 10px 20px;
+  font-family: "Poppins";
+  src: url("https://fonts.google.com/specimen/Poppins");
+}
+/* end hotel */
+
+/* footer */
+.foot-container {
+  background-color: rgb(233, 190, 111);
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+.foot-container .foot-img {
+  flex-basis: 25%;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.foot-container .foot-img img {
+  width: 100%;
+  background-color: transparent;
+}
+
+.foot-container .foot-links,
+.foot-addr {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 25%;
+  background-color: transparent;
+}
+
+.foot-container h3,
+li,
+a,
+ul,
+.links,
+.addr-info {
+  background-color: transparent;
+  list-style-type: none;
+}
+
+.foot-container ul {
+  width: 50%;
+}
+
+.foot-media {
+  background-color: transparent;
+}
+
+.foot-media h3 {
+  background-color: transparent;
+  padding-bottom: 10px;
+}
+
+.foot-logo {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  background-color: transparent;
+  padding-bottom: calc(10vh - 21%);
+  gap: 10px;
+}
+
+.foot-logo .logo-container {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  background-color: transparent;
+  border-radius: 50px;
+}
+
+.foot-logo .logo-container img {
+  width: 100%;
+  background-color: transparent;
+}
+/* end */
+
+/* media */
+@media screen and (max-width: 1385px) {
+  .content {
+    width: 100%;
+  }
+  .filter {
+    width: 250px;
+    height: 100%;
+  }
+  .comment {
+    width: fit-content;
+    padding: 20px 20px 20px 20px;
+  }
+}
+
+@media screen and (max-width: 645px) {
+  .content {
+    width: fit-content;
+  }
+  .filter {
+    width: fit-content;
+    height: fit-content;
+  }
+  .section {
+    padding: 0px 10px 20px 15px;
+  }
+  .comment {
+    width: fit-content;
+    padding: 20px 20px 20px 20px;
+  }
+  header {
+    width: fit-content;
+  }
+  footer {
+    width: fit-content;
+  }
+}
