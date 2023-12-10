@@ -48,16 +48,16 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
                                 $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
                             ?>
                                 <form action="edititem.php" method="post">
-                                    <input required type="hidden" name="id" value="<?php echo $row['id_events']; ?>">
+                                    <input required type="hidden" name="id" value="<?php echo $row['id_events']; ?>" required>
                                     <div class="flex-container-form">
                                         <label for="">Judul Event</label>
-                                        <input type="text" name="judul" id="judul" value="<?php echo $row['judul'] ?>">
+                                        <input type="text" name="judul" id="judul" value="<?php echo $row['judul'] ?>" required>
 
                                         <label for="">Path Gambar</label>
-                                        <input type="text" name="gambar" id="gambar" value="<?php echo $row['gambar'] ?>">
+                                        <input type="text" name="gambar" id="gambar" value="<?php echo $row['gambar'] ?>" required>
 
                                         <label for="">Tanggal</label>
-                                        <input type="date" name="tanggal" id="tanggal" value="<?php echo $row['tanggal'] ?>">
+                                        <input type="date" name="tanggal" id="tanggal" value="<?php echo $row['tanggal'] ?>" required>
 
                                         <label for="">Status</label>
                                         <select name="stat" id="stat">
@@ -66,7 +66,7 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
                                         </select>
 
                                         <label for="">Deskripsi</label>
-                                        <textarea name="deskrip" id="deskrip" cols="80" rows="5"><?php echo $row['deskripsi'] ?></textarea>
+                                        <textarea name="deskrip" id="deskrip" cols="80" rows="5" required><?php echo $row['deskripsi'] ?></textarea>
 
                                         <label for="">Kategori</label>
                                         <select name="kat" id="kat">
@@ -92,13 +92,13 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
                                 <form action="additem.php" method="post">
                                     <div class="flex-container-form">
                                         <label for="">Judul Event</label>
-                                        <input type="text" name="judul" id="judul">
+                                        <input type="text" name="judul" id="judul" required>
 
                                         <label for="">Path Gambar</label>
-                                        <input type="text" name="gambar" id="gambar" v>
+                                        <input type="text" name="gambar" id="gambar" required>
 
                                         <label for="">Tanggal</label>
-                                        <input type="date" name="tanggal" id="tanggal">
+                                        <input type="date" name="tanggal" id="tanggal" required>
 
                                         <label for="">Status</label>
                                         <select name="stat" id="stat">
@@ -107,7 +107,7 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
                                         </select>
 
                                         <label for="">Deskripsi</label>
-                                        <textarea name="deskrip" id="deskrip" cols="80" rows="5"></textarea>
+                                        <textarea name="deskrip" id="deskrip" cols="80" rows="5" required></textarea>
 
                                         <label for="">Kategori</label>
                                         <select name="kat" id="kat">
@@ -125,7 +125,7 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
                                 </form>
                             <?php
                             }
-
+                            
 
                             ?>
 
@@ -141,6 +141,26 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
         </div><!-- /.container-fluid -->
     </section>
     <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
+    <!-- <script>
+        const btn_sub = document.getElementsByName('submit-button')
+        const gambar = document.getElementById('gambar')
+        const judul = document.getElementById('judul')
+        const tanggal = document.getElementById('tanggal')
+        const deskrip = document.getElementById('deskrip')
+
+        btn_sub.addEventListener('click', function(e){
+            e.preventDefault()
+            if(gambar.value == '' || judul.value == '' || tanggal.vaue == '' || deskrip.value == ''){
+                alert("Fill The Form")
+            }else{
+                $.ajax({
+                    type : 'POST',
+                    url : 'additem.php'
+                    data : 
+                })
+            }
+        })
+    </script> -->
     </body>
 
     </html>

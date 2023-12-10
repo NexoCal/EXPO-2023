@@ -50,6 +50,8 @@ unset($_SESSION['ord-events']);
                                         <th> NAMA</th>
                                         <th> CERITA</th>
                                         <th> DAERAH</th>
+                                        <th></th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -66,7 +68,7 @@ unset($_SESSION['ord-events']);
                                             <td><?php echo $rows['cerita']; ?></td>
                                             <td><?php echo $rows['region']; ?></td>
                                             <td><a style="color: white;" href=""><button class="btn btn-primary btn-sm edit-button">Edit</button></a></td>
-                                            <td><a style="color: white;" href=""><button class="btn btn-primary btn-sm delete-button">Delete</button></a></td>
+                                            <td><a style="color: white;" href="deleteitem.php?id=<?php echo $rows['id_gambar_reg'];?>&table=gambar_region"><button class="btn btn-primary btn-sm delete-button">Delete</button></a></td>
                                         </tr>
                                     <?php
                                         $nomor = $nomor + 1;

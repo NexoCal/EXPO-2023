@@ -61,6 +61,7 @@ include "C:/xampp/htdocs/EXPO2023/databasekey.php";
 
                                         <label for="">Isi</label>
                                         <textarea name="isi" id="isian" cols="80" rows="5"><?php echo $row['isi'] ?></textarea>
+
                                         <br>
                                         <br>
                                         <br>

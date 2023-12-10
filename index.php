@@ -22,14 +22,13 @@ include "databasekey.php"
 
 <body>
     <header>
-        <img src="Logo.svg" alt="">
+        <a href="index.php"><img src="Logo.svg" alt=""></a>
         <nav>
             <ul class="Nav-list">
-                <li><a href="">Stories</a></li>
-                <li><a href="">Places To Go</a></li>
-                <li><a href="">Events</a></li>
-                <li><a href="">Things To Do</a></li>
-                <li><a href="">Hotels</a></li>
+                <li><a href="StoryPage.php">Stories</a></li>
+                <li><a href="PlacePage.php">Places To Go</a></li>
+                <li><a href="EventPage.php">Events</a></li>
+                <li><a href="HotelPage.php">Hotels</a></li>
             </ul>
         </nav>
     </header>
@@ -79,7 +78,7 @@ include "databasekey.php"
             </div>
             <div class="place-container">
                 <div class="place-card">
-                    <img src="assets/image//PlacesToGo/candi prambanan.png" alt="">
+                    <img src="assets/image//PlacesToGo/candi_prambanan.png" alt="">
                     <div class="content">
                         <div class="card-text">
                             <h2>CANDI PRAMBANAN</h2>
@@ -129,7 +128,7 @@ include "databasekey.php"
                 </div>
 
                 <div class="place-card">
-                    <img src="assets/image//PlacesToGo/candi prambanan.png" alt="">
+                    <img src="assets/image//PlacesToGo/candi_prambanan.png" alt="">
                     <div class="content">
                         <div class="card-text">
                             <h2>CANDI UII</h2>
@@ -247,7 +246,7 @@ include "databasekey.php"
             </div>
             <div class="stories-container">
                 <?php
-                $result = mysqli_query($conn, "SELECT gambar,judul,deskripsi_story FROM `story` ORDER BY id_story DESC");
+                $result = mysqli_query($conn, "SELECT gambar,judul,deskripsi_story,artikel FROM `story` ORDER BY id_story DESC");
                 $limiter = 0;
                 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                 ?>
@@ -258,7 +257,7 @@ include "databasekey.php"
                     <div class="stories-content">
                         <h2><?php echo $row['judul'];?></h2>
                         <p style="text-align: justify;"><?php echo $row['deskripsi_story'];?></p>
-                        <button>Read more</button>
+                        <a href="Artikel/<?php echo $row['artikel'];?>" align='center'>Read more</a>
                     </div>
                 </div>
 

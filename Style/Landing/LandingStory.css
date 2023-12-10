@@ -56,6 +56,7 @@
   .stories-image img {
     height: inherit;
     object-fit: cover;
+    width: 100%;
   }
   
   .stories-content {
@@ -73,7 +74,7 @@
     flex-basis: 100%;
   }
   
-  .stories-content button{
+  .stories-content a button, .stories-content a{
       background-color: rgb(233, 190, 111);
       color: #000000;
       font-size: 18px;
@@ -83,7 +84,7 @@
       transition: 0.5s;
   }
   
-  .stories-content button:hover{
+  .stories-content a button:hover,.stories-content a:hover{
     background-color: rgb(235, 217, 183);
     color: #2f2f2f;
     font-size: 18px;

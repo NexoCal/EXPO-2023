@@ -48,6 +48,8 @@ unset($_SESSION['ord-place']);
                                         <th style="width: 5%"> ID</th>
                                         <th> JUDUL</th>
                                         <th> DESKRIPSI</th>
+                                        <th></th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>

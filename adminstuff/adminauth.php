@@ -13,7 +13,7 @@ if ($password == md5($data['password'])){
     echo "<script>alert('Login Successful')</script>";
     header('location:dashboard_main.php');
 }else{
-    header('location:adminLogin.php');
+    header('location:adminLogin.php?access=fail');
 }
 
 
