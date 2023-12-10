@@ -34,5 +34,14 @@ if (isset($_GET['id'])) {
                 echo "Error: " . $sql . "<br>" . mysqli_error($conn);
             }
             break;
+        case ('gambar_region'):
+            $selectedID = $_GET['id'];
+            $sql = "DELETE FROM `gambar_region` WHERE id_gambar_reg = $selectedID";
+            if (mysqli_query($conn, $sql)) {
+                header('location:dashboard_hotel.php');
+            } else {
+                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            }
+            break;
     }
 }

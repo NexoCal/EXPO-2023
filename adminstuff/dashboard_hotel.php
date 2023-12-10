@@ -3,10 +3,49 @@
 include "sideheader.php";
 include "C:/xampp/htdocs/EXPO2023/databasekey.php";
 
+session_start();
 unset($_SESSION['ord-events']);
 unset($_SESSION['ord-story']);
 unset($_SESSION['ord-place']);
 
+$sql = "SELECT id_hotel, nama, alamat, contact, kabupaten FROM hotel ORDER BY id_hotel ASC";
+if(isset($_GET['sort'])){
+    $sort = $_GET['sort'];
+    if (!isset($_SESSION['ord-hotel']) || $_SESSION['ord-hotel'] == 3){
+        $_SESSION['ord-hotel'] = 0;  
+    }
+    $ord = $_SESSION['ord-hotel'];
+    switch ($sort){
+        case 'id':
+            if($ord == 0){
+                $sql = "SELECT id_hotel, nama, alamat, contact, kabupaten FROM hotel ORDER BY id_hotel ASC";
+                $_SESSION['ord-hotel'] = 1;
+            }else{
+                $sql = "SELECT id_hotel, nama, alamat, contact, kabupaten FROM hotel ORDER BY id_hotel DESC";
+                $_SESSION['ord-hotel'] = 0;
+            }
+            break;
+        case 'nama':
+            if($ord == 0){
+                $sql = "SELECT id_hotel, nama, alamat, contact, kabupaten FROM hotel ORDER BY nama ASC";
+                $_SESSION['ord-hotel'] = 1;
+            }else{
+                $sql = "SELECT id_hotel, nama, alamat, contact, kabupaten FROM hotel ORDER BY nama DESC";
+                $_SESSION['ord-hotel'] = 0;
+            }
+            break;
+        case 'kabupaten':
+            if($ord == 0){
+                $sql = "SELECT id_hotel, nama, alamat, contact, kabupaten FROM hotel ORDER BY kabupaten ASC";
+                $_SESSION['ord-hotel'] = 1;
+            }else{
+                $sql = "SELECT id_hotel, nama, alamat, contact, kabupaten FROM hotel ORDER BY kabupaten DESC";
+                $_SESSION['ord-hotel'] = 0;
+            }
+            break;
+    }
+
+}
 ?>
 
 <div class="content-wrapper">
@@ -45,18 +84,20 @@ unset($_SESSION['ord-place']);
                                 <thead>
                                     <tr>
                                         <th style="width: 5%"> NO</th>
-                                        <th style="width: 5%"> ID</th>
-                                        <th> NAMA</th>
-                                        <th> ALAMAT</th>
-                                        <th> KONTAK</th>
-                                        <th> KABUPATEN</th>
+                                        <th style="width: 5%"><a href="dashboard_hotel.php?sort=id" style="color: black;"> ID</a></th>
+                                        <th><a href="dashboard_hotel.php?sort=nama" style="color: black;"> NAMA</a></th>
+                                        <th><a href="#" style="color: black;"> ALAMAT</a></th>
+                                        <th><a href="#" style="color: black;"> KONTAK</a></th>
+                                        <th><a href="dashboard_hotel.php?sort=kabupaten" style="color: black;"> KABUPATEN</a></th>
+                                        <th style="width: 140px;"></th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
 
                                     <?php
                                     $nomor = 1;
-                                    $results = mysqli_query($conn, "SELECT id_hotel, nama, alamat, contact, kabupaten FROM hotel ORDER BY id_hotel ASC");
+                                    $results = mysqli_query($conn, $sql);
                                     while ($rows = mysqli_fetch_array($results, MYSQLI_ASSOC)) {
                                     ?>
                                         <tr>
@@ -66,8 +107,10 @@ unset($_SESSION['ord-place']);
                                             <td><?php echo $rows['alamat']; ?></td>
                                             <td><?php echo $rows['contact']; ?></td>
                                             <td><?php echo $rows['kabupaten']; ?></td>
-                                            <td><a style="color: white;" href="formHotel.php?id=<?php echo $rows['id_hotel']; ?>"><button class="btn btn-primary btn-sm edit-button">Edit</button></a></td>
-                                            <td><a style="color: white;" href="deleteitem.php?id=<?php echo $rows['id_hotel']; ?>&table=hotel"><button class="btn btn-primary btn-sm delete-button">Delete</button></a></td>
+                                            <td>
+                                                <a style="color: white;" href="formHotel.php?id=<?php echo $rows['id_hotel']; ?>"><button class="btn btn-primary btn-sm edit-button">Edit</button></a>
+                                                <a style="color: white;" href="deleteitem.php?id=<?php echo $rows['id_hotel']; ?>&table=hotel"><button class="btn btn-primary btn-sm delete-button">Delete</button></a>
+                                            </td>
                                         </tr>
                                     <?php
                                         $nomor = $nomor + 1;

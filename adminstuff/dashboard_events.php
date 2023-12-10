@@ -8,13 +8,10 @@ unset($_SESSION['ord-hotel']);
 unset($_SESSION['ord-story']);
 unset($_SESSION['ord-place']);
 
-
-
-
 $sql = "SELECT e.id_events,e.judul,e.deskripsi,e.tanggal,e.timeline, k.kategori_event FROM events e join kategori_event k on (e.id_kategori_event=k.id_kategori_event) ORDER BY e.id_events ASC";
 if(isset($_GET['sort'])){
     $sort = $_GET['sort'];
-    if ($_SESSION['ord-events'] == 3){
+    if ($_SESSION['ord-events'] == 3 || !isset($_SESSION['ord-events'])){
         $_SESSION['ord-events'] = 0;  
     }
     $ord = $_SESSION['ord-events'];
@@ -58,9 +55,6 @@ if(isset($_GET['sort'])){
     }
 
 }
-
-
-
 
 ?>
 
@@ -106,6 +100,7 @@ if(isset($_GET['sort'])){
                                         <th><a href="dashboard_events.php?sort=tanggal" style="color: black;"> TANGGAL</a></th>
                                         <th><a href="dashboard_events.php?sort=status" style="color: black;"> STATUS</a></th>
                                         <th><a> KATEGORI</a></th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
