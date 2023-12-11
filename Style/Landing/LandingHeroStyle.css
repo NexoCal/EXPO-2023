@@ -1,0 +1,162 @@
+.Hero {
+    width: 100vw;
+    height: calc(100vw - 65vw);
+    overflow: hidden;
+    background-color: #000000;
+}
+
+.Hero h1 {
+    position: relative;
+    top: -25%;
+    left: 5%;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 4.157vw;
+}
+
+.img-container img {
+    width: 100vw;
+    object-fit: cover;
+    object-position: 0px -100px;
+    opacity: 0.7;
+}
+
+@-webkit-keyframes slide_animation {
+    0% {
+        right: 0vw;
+    }
+
+    10% {
+        right: 0vw;
+    }
+
+    20% {
+        right: 100vw;
+    }
+
+    30% {
+        right: 100vw;
+    }
+
+    40% {
+        right: 200vw;
+    }
+
+    50% {
+        right: 200vw;
+    }
+
+    60% {
+        right: 200vw;
+    }
+
+    70% {
+        right: 300vw;
+    }
+
+    80% {
+        right: 300vw;
+    }
+
+    90% {
+        right: 300vw;
+    }
+
+    100% {
+        right: 0vw;
+    }
+}
+
+.Slider {
+    display: flex;
+    width: 100vw;
+    height: calc(100vw - 65vw);
+    margin: 0vw 0vw 0vw 0vw;
+    position: relative;
+    -webkit-animation-name: slide_animation;
+    -webkit-animation-duration: 20s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+    -webkit-animation-play-state: running;
+}
+
+.img-container {
+    height: calc(100vw - 65vw);
+    width: 100vw;
+    position: relative;
+    float: left;
+    background-color: #000000;
+}
+
+@media screen and (max-width: 873px) {
+
+    .Hero {
+        width: 100vw;
+        height: calc(100vw - 55vw);
+        overflow: hidden;
+        background-color: #000000;
+    }
+
+    .Hero h1 {
+        position: relative;
+        width: 60vw;
+        top: -25%;
+        left: 5%;
+        background-color: transparent;
+        color: #ffffff;
+        font-size: 6.157vw;
+    }
+
+    .img-container {
+        height: calc(100vw - 55vw);
+        width: 100vw;
+        position: relative;
+        float: left;
+        background-color: #000000;
+    }
+
+    .img-container img {
+        width: 120vw;
+        object-fit: cover;
+        object-position: 0px -80px;
+        opacity: 0.7;
+    }
+
+}
+
+@media screen and (max-width: 490px) {
+
+    .Hero {
+        width: 100vw;
+        height: calc(150vw - 25vw);
+        overflow: hidden;
+        background-color: #000000;
+    }
+
+    .Hero h1 {
+        position: relative;
+        width: 60vw;
+        top: 25%;
+        left: 5%;
+        background-color: transparent;
+        color: #ffffff;
+        font-size: 11.157vw;
+    }
+
+    .img-container {
+        height: calc(150vw - 25vw);
+        width: 100vw;
+        position: relative;
+        float: left;
+        background-color: #000000;
+    }
+
+    .img-container img {
+        width: 400vw;
+        object-fit: cover;
+        object-position: -700px -80px;
+        opacity: 0.7;
+    }
+
+
+}

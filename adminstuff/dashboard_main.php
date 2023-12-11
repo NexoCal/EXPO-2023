@@ -2,6 +2,12 @@
 
 include "sideheader.php";
 
+session_start();
+$_SESSION['ord-events'] = 3;
+$_SESSION['ord-hotel'] = 3;
+$_SESSION['ord-story'] = 3;
+$_SESSION['ord-place'] = 3;
+
 ?>
 
 <!DOCTYPE html>

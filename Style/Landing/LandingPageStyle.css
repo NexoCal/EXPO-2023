@@ -1,0 +1,260 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("https://fonts.google.com/specimen/Poppins");
+}
+
+body {
+  overflow-x: hidden;
+
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(255, 255, 255);
+  font-family: "Poppins";
+}
+
+img,
+li,
+a {
+  background-color: #f3f3f3;
+  text-decoration: none;
+  font-weight: 600;
+  color: #000000;
+}
+
+header {
+  background-color: #f3f3f3;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.Nav-list {
+  background-color: #f3f3f3;
+  list-style-type: none;
+}
+
+.Nav-list li {
+  display: inline-block;
+  padding-left: 40px;
+}
+
+.Nav-list li a {
+  transition: all 0.2s ease 0s;
+}
+
+.Nav-list li a:hover {
+  color: #7f5c5c;
+}
+
+/*===[END OF NAVBAR CSS]===*/
+
+
+
+/*===[END OF the PLACE]===*/
+.Things {
+  position: relative;
+  overflow: hidden;
+  height: 600px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.Things .things-title h2{
+  font-size: 28px;
+}
+
+.Things .banner-deco {
+  position: relative;
+  top: -369px;
+  background-color: #DBCDCD;
+  width: 102vw;
+  height: 329px;
+  z-index: 0;
+  box-shadow: -20px 0px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.Things .things-container {
+  gap: 12px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  background-color: transparent;
+}
+
+.Things .things-container .big-section {
+  width: 412px;
+  height: 412px;
+  overflow: hidden;
+  border-radius: 7px;
+  background-color: #000000;
+}
+
+
+.Things .things-container .small-section {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  width: 627px;
+  height: 412px;
+  overflow: hidden;
+  border-radius: 7px;
+  gap: 12px;
+}
+
+.Things .things-container .small-section .section-1 {
+  background-color: transparent;
+  display: flex;
+  width: 627px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 7px;
+  gap: 12px;
+}
+
+.Things .things-container .small-section .section-2 {
+  background-color: transparent;
+  display: flex;
+  width: 627px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 7px;
+  gap: 12px;
+}
+
+
+.Things .things-container .small-section .card-long {
+  width: 416px;
+  height: inherit;
+  overflow: hidden;
+  border-radius: 7px;
+  background-color: #000000;
+}
+
+.Things .things-container .small-section .card-long img {
+  height: inherit;
+  width: 100%;
+  object-fit: fill;
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.Things .things-container .small-section .card-long h3 {
+  color: #ffffff;
+  background-color: transparent;
+  position: relative;
+  top: -120px;
+  left: 40%;
+  opacity: 0.0;
+  transition: 0.2s;
+}
+
+.Things .things-container .small-section .card-small h3 {
+  color: #ffffff;
+  background-color: transparent;
+  position: relative;
+  top: -120px;
+  left: 36%;
+  opacity: 0.0;
+  transition: 0.2s;
+}
+
+.Things .things-container .big-section h3 {
+  color: #ffffff;
+  background-color: transparent;
+  position: relative;
+  font-size: 26px;
+  top: -230px;
+  left: 40%;
+  opacity: 0.0;
+  transition: 0.2s;
+}
+
+.Things .things-container .small-section .card-long:hover h3 {
+  color: #ffffff;
+  background-color: transparent;
+  position: relative;
+  top: -120px;
+  left: 40%;
+  opacity: 1.0;
+  transition: 0.5s;
+}
+
+.Things .things-container .small-section .card-small:hover h3 {
+  color: #ffffff;
+  background-color: transparent;
+  position: relative;
+  top: -120px;
+  left: 36%;
+  opacity: 1.0;
+  transition: 0.5s;
+}
+
+.Things .things-container .big-section:hover h3 {
+  color: #ffffff;
+  background-color: transparent;
+  position: relative;
+  top: -230px;
+  left: 40%;
+  opacity: 1.0;
+  transition: 0.5s;
+}
+
+
+
+.Things .things-container .small-section .card-long:hover img {
+  height: inherit;
+  width: 100%;
+  object-fit: fill;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.Things .things-container .small-section .card-small img {
+  height: inherit;
+  width: 100%;
+  object-fit: fill;
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.Things .things-container .small-section .card-small:hover img {
+  height: inherit;
+  width: 100%;
+  object-fit: fill;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.Things .things-container .small-section .card-small {
+  width: 200px;
+  height: inherit;
+  overflow: hidden;
+  border-radius: 7px;
+  background-color: #000000;
+}
+
+.Things .things-container .big-section img {
+  height: inherit;
+  width: 100%;
+  object-fit: fill;
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.Things .things-container .big-section:hover img {
+  height: inherit;
+  width: 100%;
+  object-fit: fill;
+  opacity: 0.6;
+  transition: 0.3s;
+}
