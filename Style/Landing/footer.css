@@ -71,3 +71,11 @@
     width: 100%;
     background-color: transparent;
   }
+
+  .links ul li, .links ul li a{
+    background-color: transparent;
+  }
+
+  .addr-info ul li, .addr-info ul li a{
+    background-color: transparent;
+  }

@@ -50,17 +50,22 @@ if (isset($_GET['filtering'])) {
 </head>
 
 <body id="<?php echo $id ?>">
-    <header>
-        <a href="index.php"><img src="Logo.svg" alt=""></a>
-        <nav>
-            <ul class="Nav-list">
-                <li><a href="StoryPage.php">Stories</a></li>
-                <li><a href="PlacePage.php">Places To Go</a></li>
-                <li><a href="EventPage.php">Events</a></li>
-                <li><a href="HotelPage.php">Hotels</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="Navbar">
+        <div class="img-logo">
+            <a href="index.php"><img src="Logo.svg" alt=""></a>
+        </div>
+        <header class="navhead" id="NavNav">
+            <nav>
+                <ul class="Nav-list">
+                    <li><a href="StoryPage.php">Stories</a></li>
+                    <li><a href="PlacePage.php">Places To Go</a></li>
+                    <li><a href="EventPage.php">Events</a></li>
+                    <li><a href="HotelPage.php">Hotels</a></li>
+                </ul>
+            </nav>
+        </header>
+        <a href="javascript:void(0);" class="icon" onclick="shownav()">&#9776;</a>
+    </div>
     <div class="about">
         <div class="about-container">
             <h1>HOTELS IN YOGYAKARTA</h1>
@@ -181,6 +186,7 @@ if (isset($_GET['filtering'])) {
         filters[filterId].classList.add('activefilter');
     </script>
 
+    <script src="javascripts/navbarscript.js"></script>
 
 
 </body>

@@ -17,21 +17,27 @@ include "databasekey.php"
     <link rel="stylesheet" href="Style/Landing/LandingPlaceStyle.css">
     <link rel="stylesheet" href="Style/Landing/LandingAboutStyle.css">
     <link rel="stylesheet" href="Style/Landing/footer.css">
+    <link rel="stylesheet" href="Style/NavBarStyle.css">
     <title>Visit Yogyakarta</title>
 </head>
 
 <body>
-    <header>
-        <a href="index.php"><img src="Logo.svg" alt=""></a>
-        <nav>
-            <ul class="Nav-list">
-                <li><a href="StoryPage.php">Stories</a></li>
-                <li><a href="PlacePage.php">Places To Go</a></li>
-                <li><a href="EventPage.php">Events</a></li>
-                <li><a href="HotelPage.php">Hotels</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="Navbar">
+        <div class="img-logo">
+            <a href="index.php"><img src="Logo.svg" alt=""></a>
+        </div>
+        <header class="navhead" id="NavNav">
+            <nav>
+                <ul class="Nav-list">
+                    <li><a href="StoryPage.php">Stories</a></li>
+                    <li><a href="PlacePage.php">Places To Go</a></li>
+                    <li><a href="EventPage.php">Events</a></li>
+                    <li><a href="HotelPage.php">Hotels</a></li>
+                </ul>
+            </nav>
+        </header>
+        <a href="javascript:void(0);" class="icon" onclick="shownav()">&#9776;</a>
+    </div>
     <main>
         <!--This Is Hero-->
         <div class="Hero">
@@ -162,26 +168,25 @@ include "databasekey.php"
                     <h3>Culture</h3>
                 </div>
                 <div class="small-section">
-                    <div class="section-1">
-                        <div class="card-long">
-                            <img src="assets/image/Things/Culinary.png" alt="">
-                            <h3>Culinary</h3>
-                        </div>
-                        <div class="card-small">
-                            <img src="assets/image/Things/Mountain.png" alt="">
-                            <h3>Hiking</h3>
-                        </div>
+                    <div class="card-long">
+                        <img src="assets/image/Things/Culinary.png" alt="">
+                        <h3>Culinary</h3>
                     </div>
-                    <div class="section-2">
-                        <div class="card-small">
-                            <img src="assets/image/Things/Beach.png" alt="">
-                            <h3>Beach</h3>
-                        </div>
-                        <div class="card-long">
-                            <img src="assets/image/Things/Grass.png" alt="">
-                            <h3>Tracking</h3>
-                        </div>
+                    <div class="card-small">
+                        <img src="assets/image/Things/Mountain.png" alt="">
+                        <h3>Hiking</h3>
                     </div>
+
+
+                    <div class="card-small">
+                        <img src="assets/image/Things/Beach.png" alt="">
+                        <h3>Beach</h3>
+                    </div>
+                    <div class="card-long">
+                        <img src="assets/image/Things/Grass.png" alt="">
+                        <h3>Tracking</h3>
+                    </div>
+
                 </div>
             </div>
             <div class="banner-deco"></div>
@@ -228,10 +233,10 @@ include "databasekey.php"
 
 
                 <?php
-                $counter = $counter + 1;
-                if ($counter == 3){
-                    break;
-                }
+                    $counter = $counter + 1;
+                    if ($counter == 3) {
+                        break;
+                    }
                 }
                 ?>
             </div>
@@ -248,24 +253,24 @@ include "databasekey.php"
                 <?php
                 $result = mysqli_query($conn, "SELECT gambar,judul,deskripsi_story,artikel FROM `story` ORDER BY id_story DESC");
                 $limiter = 0;
-                while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                 ?>
-                <div class="stories-card">
-                    <div class="stories-image">
-                        <img src="assets/image/Stories/<?php echo $row['gambar'];?>" alt="">
+                    <div class="stories-card">
+                        <div class="stories-image">
+                            <img src="assets/image/Stories/<?php echo $row['gambar']; ?>" alt="">
+                        </div>
+                        <div class="stories-content">
+                            <h2><?php echo $row['judul']; ?></h2>
+                            <p style="text-align: justify;"><?php echo $row['deskripsi_story']; ?></p>
+                            <a href="Artikel/<?php echo $row['artikel']; ?>" align='center'>Read more</a>
+                        </div>
                     </div>
-                    <div class="stories-content">
-                        <h2><?php echo $row['judul'];?></h2>
-                        <p style="text-align: justify;"><?php echo $row['deskripsi_story'];?></p>
-                        <a href="Artikel/<?php echo $row['artikel'];?>" align='center'>Read more</a>
-                    </div>
-                </div>
 
-                <?php 
-                $limiter = $limiter + 1;
-                if ($limiter == 5){
-                    break;
-                }
+                <?php
+                    $limiter = $limiter + 1;
+                    if ($limiter == 5) {
+                        break;
+                    }
                 };
                 ?>
 
@@ -321,6 +326,16 @@ include "databasekey.php"
         </div>
     </div>
 
+    <script>
+        function shownav() {
+            var x = document.getElementById("NavNav");
+            if (x.className === "navhead") {
+                x.className = "active";
+            } else {
+                x.className = "navhead";
+            }
+        }
+    </script>
 
 </body>
 

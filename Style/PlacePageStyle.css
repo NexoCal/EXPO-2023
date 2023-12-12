@@ -119,3 +119,66 @@
     height: inherit;
     
   }
+
+  @media screen and (max-width: 490px){
+
+    .Hero {
+      width: 100%;
+      height:calc(150vw - 25vw);
+      overflow: hidden;
+      background-color: transparent;
+    }
+  
+    .Hero .img-container{
+      background-color: black;
+      height: inherit;
+    }
+  
+    .Hero .img-container img{
+      height: inherit;
+      object-fit: cover;
+      opacity: 0.7;
+    }
+  
+    .Hero  h1{
+      position: relative;
+      background-color: transparent;
+      color: white;
+      top: -20%;
+      left: 40px;
+      font-size: 12vw;
+    }
+
+    .places{
+      display: flex ;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 60px 40px 60px 40px;
+      gap: 20px;
+    }
+
+    .place-card{
+      width: 100%;
+      background-color: black;
+      height: 250px;
+      overflow: hidden;
+      flex-shrink: 0;
+      border-width: 1px;
+      border-style: solid;
+      position: relative;
+    }
+
+    .place-card-container{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      gap: 10px;
+      justify-content: flex-start;
+    }
+  
+    
+  
+    
+    
+  }

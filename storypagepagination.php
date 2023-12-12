@@ -14,5 +14,5 @@ if (isset($_GET['gotopage'])) {
 }
 
 
-$result_story = mysqli_query($conn, "SELECT gambar,judul,deskripsi_story,artikel FROM `story` ORDER BY id_story DESC LIMIT $start,$end");
+$result_story = mysqli_query($conn, "SELECT id_story,gambar,judul,deskripsi_story,artikel FROM `story` ORDER BY id_story DESC LIMIT $start,$end");
 ?>

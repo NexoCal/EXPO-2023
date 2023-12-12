@@ -1,16 +1,12 @@
 <?php
 
-include 'databasekey.php';
-include 'storypagepagination.php';
+include "databasekey.php";
 
+$id = $_GET['idplace'];
 
-if (isset($_GET['gotopage'])){
-    $id = $_GET['gotopage'];
-}else{
-    $id = 1;
-}
+$result_place = mysqli_query($conn, "SELECT p.id_gambar_reg,p.nama_tempat,p.gambar,p.cerita,d.region FROM gambar_region p join daerah_region d on (p.id_daerah = d.id_region) WHERE p.id_gambar_reg = $id");
+$rows = mysqli_fetch_array($result_place, MYSQLI_ASSOC);
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,13 +14,13 @@ if (isset($_GET['gotopage'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Style/StroyPageStyle.css">
+    <title><?php echo $rows['nama_tempat'];?></title>
     <link rel="stylesheet" href="Style/NavBarStyle.css">
     <link rel="stylesheet" href="Style/Landing/footer.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="Style/GenericStyle.css">
 </head>
 
-<body id="<?php echo $id ?>">
+<body>
     <div class="Navbar">
         <div class="img-logo">
             <a href="index.php"><img src="Logo.svg" alt=""></a>
@@ -41,61 +37,17 @@ if (isset($_GET['gotopage'])){
         </header>
         <a href="javascript:void(0);" class="icon" onclick="shownav()">&#9776;</a>
     </div>
-    <!--Hero-->
-    <div class="Hero">
-        <div class="img-container">
-            <img src="assets/image/Stories/StoryHero.png" alt="">
+
+    <div class="content">
+        <div class="img-container" style="height: 560px;">
+            <img src="assets/image/PlacesToGo/<?php echo $rows['region'] ?>/<?php echo $rows['gambar']?>" alt="" style="position: absolute; top: 0%">
         </div>
-        <h1>STORIES</h1>
+        <div class="judul-arti"><h1><?php echo $rows['nama_tempat'];?></h1></div>
+        <div class="paraga"><p><?php echo $rows['cerita'];?></p></div>
+
     </div>
-    <!--About-->
-    <div>
-        <div class="about-container">
-            <h1>KEEP YOURSELF UPDATED</h1>
-            <p>View a dozen or more of interesting and latest stories about yogyakarta, where
-                useful information can be found to help your journey ranging from places and
-                food recommendation to history and arts you can find it all here.
-            </p>
-        </div>
-    </div>
-    <!--Cards-->
-
-    <div class="Stories">
-        <div class="stories-header">
-            <h1>LATEST STORIES</h1>
-        </div>
-        <div class="stories-container">
-            <?php while ($row = mysqli_fetch_array($result_story, MYSQLI_ASSOC)) {
-            ?>
-                <div class="stories-card">
-                    <div class="stories-image">
-                        <img src="assets/image/Stories/<?php echo $row['gambar']; ?>" alt="">
-                    </div>
-                    <div class="stories-content">
-                        <h2><?php echo $row['judul']; ?></h2>
-                        <p style="text-align: justify;"><?php echo $row['deskripsi_story']; ?></p>
-                        <a href="GenericStory.php?idstory=<?php echo $row['id_story']?>" align='center'>Read more</a>
-                    </div>
-                </div>
-            <?php
-            };
-
-            ?>
 
 
-        </div>
-        <div class="pagination">
-            <a href=""><</a>
-                    <?php
-                    for ($i = 1; $i <= $page_count; $i++) {
-                    ?>
-                        <a href="?<?php echo "gotopage=" . $i ?>" align="center"><?php echo $i ?></a>
-                    <?php
-                    }
-                    ?>
-                    <a href="">></a>
-        </div>
-    </div>
     <div class="foot-container">
         <div class="foot-img">
             <img src="Logo.svg" alt="">
@@ -145,13 +97,6 @@ if (isset($_GET['gotopage'])){
         </div>
     </div>
 
-    <script>
-        let links = document.querySelectorAll('.pagination > a');
-        let bodyId = parseInt(document.body.id);
-        links[bodyId].classList.add('activepage');
-    </script>
-
-    <script src="javascripts/navbarscript.js"></script>
 </body>
 
 </html>

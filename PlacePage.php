@@ -17,17 +17,22 @@ include 'databasekey.php';
 </head>
 
 <body>
-    <header>
-        <a href="index.php"><img src="Logo.svg" alt=""></a>
-        <nav>
-            <ul class="Nav-list">
-                <li><a href="StoryPage.php">Stories</a></li>
-                <li><a href="PlacePage.php">Places To Go</a></li>
-                <li><a href="EventPage.php">Events</a></li>
-                <li><a href="HotelPage.php">Hotels</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="Navbar">
+        <div class="img-logo">
+            <a href="index.php"><img src="Logo.svg" alt=""></a>
+        </div>
+        <header class="navhead" id="NavNav">
+            <nav>
+                <ul class="Nav-list">
+                    <li><a href="StoryPage.php">Stories</a></li>
+                    <li><a href="PlacePage.php">Places To Go</a></li>
+                    <li><a href="EventPage.php">Events</a></li>
+                    <li><a href="HotelPage.php">Hotels</a></li>
+                </ul>
+            </nav>
+        </header>
+        <a href="javascript:void(0);" class="icon" onclick="shownav()">&#9776;</a>
+    </div>
     <!--Hero-->
     <div class="Hero">
         <div class="img-container">
@@ -42,18 +47,20 @@ include 'databasekey.php';
             $result = mysqli_query($conn, "SELECT p.id_gambar_reg,p.nama_tempat,p.gambar,p.cerita,d.region FROM gambar_region p join daerah_region d on (p.id_daerah = d.id_region) WHERE p.id_daerah = 1");
             while ($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             ?>
-                <div class="place-card">
-                    <img src="assets/image/PlacesToGo/<?php echo $rows['region'] ?>/<?php echo $rows['gambar'] ?>" alt="">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img src="assets/image/PlacesToGo/<?php echo $rows['region'] ?>/<?php echo $rows['gambar'] ?>" alt="">
-                        </div>
-                        <div class="card-text">
-                            <h2><?php echo $rows['nama_tempat'] ?></h2>
-                            
+                <a href="GenericPlace.php?idplace=<?php echo $rows['id_gambar_reg']; ?>">
+                    <div class="place-card">
+                        <img src="assets/image/PlacesToGo/<?php echo $rows['region'] ?>/<?php echo $rows['gambar'] ?>" alt="">
+                        <div class="card-content">
+                            <div class="card-img">
+                                <img src="assets/image/PlacesToGo/<?php echo $rows['region'] ?>/<?php echo $rows['gambar'] ?>" alt="">
+                            </div>
+                            <div class="card-text">
+                                <h2><?php echo $rows['nama_tempat'] ?></h2>
+
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
             <?php
             }
             ?>
@@ -65,18 +72,20 @@ include 'databasekey.php';
             $result = mysqli_query($conn, "SELECT p.id_gambar_reg,p.nama_tempat,p.gambar,p.cerita,d.region FROM gambar_region p join daerah_region d on (p.id_daerah = d.id_region) WHERE p.id_daerah = 2");
             while ($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             ?>
-                <div class="place-card">
-                    <img src="assets/image/PlacesToGo/<?php echo $rows['region'] ?>/<?php echo $rows['gambar'] ?>" alt="">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img src="assets/image/PlacesToGo/<?php echo $rows['region'] ?>/<?php echo $rows['gambar'] ?>" alt="">
-                        </div>
-                        <div class="card-text">
-                            <h2><?php echo $rows['nama_tempat'] ?></h2>
+                <a href="GenericPlace.php?idplace=<?php echo $rows['id_gambar_reg']; ?>">
+                    <div class="place-card">
+                        <img src="assets/image/PlacesToGo/<?php echo $rows['region'] ?>/<?php echo $rows['gambar'] ?>" alt="">
+                        <div class="card-content">
+                            <div class="card-img">
+                                <img src="assets/image/PlacesToGo/<?php echo $rows['region'] ?>/<?php echo $rows['gambar'] ?>" alt="">
+                            </div>
+                            <div class="card-text">
+                                <h2><?php echo $rows['nama_tempat'] ?></h2>
 
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
             <?php
             }
             ?>
@@ -94,18 +103,20 @@ include 'databasekey.php';
                 $result = mysqli_query($conn, "SELECT p.id_gambar_reg,p.nama_tempat,p.gambar,p.cerita,d.region FROM gambar_region p join daerah_region d on (p.id_daerah = d.id_region) WHERE p.id_daerah = 3");
                 while ($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                 ?>
-                    <div class="place-card">
-                        <img src="assets/image/PlacesToGo/<?php echo $rows['region'] ?>/<?php echo $rows['gambar'] ?>" alt="">
-                        <div class="card-content">
-                            <div class="card-img">
-                                <img src="assets/image/PlacesToGo/<?php echo $rows['region'] ?>/<?php echo $rows['gambar'] ?>" alt="">
-                            </div>
-                            <div class="card-text">
-                                <h2><?php echo $rows['nama_tempat'] ?></h2>
+                    <a href="GenericPlace.php?idplace=<?php echo $rows['id_gambar_reg']; ?>">
+                        <div class="place-card">
+                            <img src="assets/image/PlacesToGo/<?php echo $rows['region'] ?>/<?php echo $rows['gambar'] ?>" alt="">
+                            <div class="card-content">
+                                <div class="card-img">
+                                    <img src="assets/image/PlacesToGo/<?php echo $rows['region'] ?>/<?php echo $rows['gambar'] ?>" alt="">
+                                </div>
+                                <div class="card-text">
+                                    <h2><?php echo $rows['nama_tempat'] ?></h2>
 
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
             <?php
                 }
             }
@@ -118,18 +129,20 @@ include 'databasekey.php';
             $result = mysqli_query($conn, "SELECT p.id_gambar_reg,p.nama_tempat,p.gambar,p.cerita,d.region FROM gambar_region p join daerah_region d on (p.id_daerah = d.id_region) WHERE p.id_daerah = 4");
             while ($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             ?>
-                <div class="place-card">
-                    <img src="assets/image/PlacesToGo/<?php echo $rows['region'] ?>/<?php echo $rows['gambar'] ?>" alt="">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img src="assets/image/PlacesToGo/<?php echo $rows['region'] ?>/<?php echo $rows['gambar'] ?>" alt="">
-                        </div>
-                        <div class="card-text">
-                            <h2><?php echo $rows['nama_tempat'] ?></h2>
+                <a href="GenericPlace.php?idplace=<?php echo $rows['id_gambar_reg']; ?>">
+                    <div class="place-card">
+                        <img src="assets/image/PlacesToGo/<?php echo $rows['region'] ?>/<?php echo $rows['gambar'] ?>" alt="">
+                        <div class="card-content">
+                            <div class="card-img">
+                                <img src="assets/image/PlacesToGo/<?php echo $rows['region'] ?>/<?php echo $rows['gambar'] ?>" alt="">
+                            </div>
+                            <div class="card-text">
+                                <h2><?php echo $rows['nama_tempat'] ?></h2>
 
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
             <?php
             }
 
@@ -142,18 +155,20 @@ include 'databasekey.php';
             $result = mysqli_query($conn, "SELECT p.id_gambar_reg,p.nama_tempat,p.gambar,p.cerita,d.region FROM gambar_region p join daerah_region d on (p.id_daerah = d.id_region) WHERE p.id_daerah = 5");
             while ($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             ?>
-                <div class="place-card">
-                    <img src="assets/image/PlacesToGo/<?php echo $rows['region'] ?>/<?php echo $rows['gambar'] ?>" alt="">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img src="assets/image/PlacesToGo/<?php echo $rows['region'] ?>/<?php echo $rows['gambar'] ?>" alt="">
-                        </div>
-                        <div class="card-text">
-                            <h2><?php echo $rows['nama_tempat'] ?></h2>
-                            
+                <a href="GenericPlace.php?idplace=<?php echo $rows['id_gambar_reg']; ?>">
+                    <div class="place-card">
+                        <img src="assets/image/PlacesToGo/<?php echo $rows['region'] ?>/<?php echo $rows['gambar'] ?>" alt="">
+                        <div class="card-content">
+                            <div class="card-img">
+                                <img src="assets/image/PlacesToGo/<?php echo $rows['region'] ?>/<?php echo $rows['gambar'] ?>" alt="">
+                            </div>
+                            <div class="card-text">
+                                <h2><?php echo $rows['nama_tempat'] ?></h2>
+
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
             <?php
             }
             ?>
@@ -208,6 +223,7 @@ include 'databasekey.php';
             </div>
         </div>
     </div>
+    <script src="javascripts/navbarscript.js"></script>
 </body>
 
 </html>

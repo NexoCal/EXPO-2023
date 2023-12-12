@@ -1,7 +1,7 @@
 <?php
 
 include "sideheader.php";
-include "C:/xampp/htdocs/EXPO2023/databasekey.php";
+include "../databasekey.php";
 
 session_start();
 unset($_SESSION['ord-hotel']);

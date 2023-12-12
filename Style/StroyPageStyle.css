@@ -136,6 +136,7 @@
   gap: 10px;
   padding-top: 20px;
   padding-bottom: 20px;
+  background-color: transparent;
 }
 
 .pagination a{
@@ -163,7 +164,96 @@
   transition: 0.1s;
 }
 
-a.active{
+a.activepage{
   background-color: rgb(233, 190, 111);
   border-color: rgb(171, 137, 75);
+}
+
+@media screen and (max-width: 490px){
+
+  .Hero {
+    width: 100%;
+    height:calc(150vw - 25vw);
+    overflow: hidden;
+    background-color: transparent;
+  }
+
+  .Hero .img-container{
+    background-color: black;
+    height: inherit;
+  }
+
+  .Hero .img-container img{
+    height: inherit;
+    object-fit: cover;
+    opacity: 0.7;
+  }
+
+  .Hero  h1{
+    position: relative;
+    background-color: transparent;
+    color: white;
+    top: -20%;
+    left: 40px;
+    font-size: 12vw;
+  }
+
+  
+
+  .about-container{
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .Stories{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stories-header{
+    display: flex;
+    justify-content: flex-start;
+    padding: 0px 0px 10px 0px
+  }
+
+  .stories-card {
+    flex-shrink: 0;
+    display: flex;
+    gap: 0px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 80%;
+    height: fit-content;
+    overflow: hidden;
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .stories-image {
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .stories-image img {
+    height: inherit;
+    object-fit: cover;
+    width: 105%;
+  }
+
+  .stories-content {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  
 }

@@ -1,6 +1,6 @@
 <?php
 
-include "C:/xampp/htdocs/EXPO2023/databasekey.php";
+include "../databasekey.php";
 
 
 
