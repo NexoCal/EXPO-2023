@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Dec 03, 2023 at 01:46 PM
+-- Generation Time: Dec 11, 2023 at 10:33 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -101,26 +101,27 @@ CREATE TABLE `gambar_region` (
   `nama_tempat` varchar(255) NOT NULL,
   `gambar` text NOT NULL,
   `cerita` text NOT NULL,
-  `id_daerah` int(11) NOT NULL
+  `id_daerah` int(11) NOT NULL,
+  `trip_cost` enum('Premium','Average','Low_cost','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gambar_region`
 --
 
-INSERT INTO `gambar_region` (`id_gambar_reg`, `nama_tempat`, `gambar`, `cerita`, `id_daerah`) VALUES
-(1, 'Tugu', 'Tugu.jpg', 'Tugu Yogyakarta, juga dikenal sebagai Tugu Pal atau Tugu Jogja, adalah monumen ikonik yang berdiri megah di pusat Kota Yogyakarta, Indonesia. Monumen ini memiliki tinggi sekitar 15,5 meter dan merupakan simbol kekuatan dan kejayaan Kerajaan Mataram Islam. Tugu ini berlokasi di persimpangan Jalan Malioboro dan Jalan Jenderal Sudirman, menjadikannya sebagai pusat lalu lintas dan titik kumpul utama di kota ini. Dirancang pada tahun 1889 oleh seorang arsitek Belanda, Tugu Yogyakarta telah menjadi landmark yang tak terpisahkan dari keindahan budaya dan sejarah kota ini, menarik pengunjung dengan keunikan arsitektur dan makna historisnya.', 1),
-(2, 'Malioboro', 'malioboro.jpg', 'Jalan Malioboro adalah sebuah jalan legendaris yang terletak di pusat kota Yogyakarta, Indonesia. Merupakan pusat perbelanjaan dan kehidupan malam yang terkenal, Jalan Malioboro menawarkan pengalaman berbelanja yang unik dengan berbagai toko tradisional yang menjual kerajinan tangan, batik, dan souvenir khas Yogyakarta. Selain itu, jalan ini juga dipenuhi dengan warung makan dan pedagang kaki lima yang menawarkan hidangan lezat. Di malam hari, suasana di Jalan Malioboro semakin hidup dengan lampu-lampu hias yang menerangi trotoarnya, menciptakan atmosfer yang ramai dan berwarna. Jalan Malioboro tidak hanya menjadi destinasi wisata belanja, tetapi juga mencerminkan kehidupan budaya dan sejarah kota Yogyakarta.', 1),
-(3, 'Taman Sari', 'taman_sari.jpeg', 'Taman Sari, terletak di Yogyakarta, Indonesia, adalah kompleks keraton yang indah dan bersejarah yang dibangun pada abad ke-18 sebagai tempat rekreasi bagi keluarga kerajaan. Terletak hanya sejauh berjalan kaki dari Keraton Yogyakarta, Taman Sari menawarkan pesona arsitektur Jawa klasik dengan kolam-kolam yang indah, paviliun-paviliun, dan taman yang rimbun. Selain sebagai tempat hiburan, Taman Sari juga memiliki makna sejarah sebagai bekas tempat mandi kerajaan. Keindahan dan keanggunan Taman Sari membuatnya menjadi destinasi wisata yang populer di Yogyakarta, mengajak pengunjung untuk menyelami atmosfer keagungan masa lalu kerajaan Jawa.', 1),
-(4, 'Kraton', 'kraton.jpeg', 'Kraton Yogyakarta, juga dikenal sebagai Istana Ngayogyakarta Hadiningrat, merupakan istana resmi Kesultanan Ngayogyakarta Hadiningrat yang terletak di pusat Kota Yogyakarta, Indonesia. Dibangun pada tahun 1755 oleh Sultan Hamengkubuwono I, Kraton Yogyakarta adalah kompleks istana yang mencakup area seluas 14 hektar dengan bangunan-bangunan berarsitektur tradisional Jawa yang megah. Lokasinya yang strategis berada di tengah kota membuat Kraton Yogyakarta menjadi salah satu daya tarik utama bagi wisatawan yang ingin mengenal lebih dekat sejarah dan budaya Jawa. Di dalam kompleks ini, pengunjung dapat menjelajahi museum, galeri seni, serta melihat pertunjukan seni tradisional yang memperkaya pengalaman budaya mereka.', 1),
-(5, 'Candi Prambanan', 'candi_prambanan.jpeg', 'Candi Prambanan, juga dikenal sebagai Candi Rara Jonggrang, merupakan kompleks candi Hindu abad ke-9 yang terletak sekitar 17 kilometer timur laut Yogyakarta, Indonesia. Dibangun pada masa kerajaan Mataram Kuno, candi ini merupakan masterpiece arsitektur Hindu dengan tiga candi utama yang didedikasikan untuk Trimurti, yakni Brahma, Wisnu, dan Siwa. Keindahan arsitektur Prambanan tercermin dalam relief-releifnya yang menggambarkan kisah epik Ramayana dan Mahabharata. Candi ini menjadi salah satu situs warisan dunia UNESCO dan menarik pengunjung dengan kemegahan dan keindahan arsitektur serta nilai sejarah yang kaya.', 4),
-(6, 'Ratu Boko', 'ratu_boko.jpg', 'Candi Ratu Boko adalah kompleks arkeologi yang terletak di dataran tinggi sekitar 3 kilometer selatan dari Candi Prambanan, di Yogyakarta, Indonesia. Candi ini menawarkan pemandangan spektakuler dari atas bukit, memberikan pengunjung gambaran keindahan arsitektur klasik Jawa. Dikenal sebagai istana kerajaan pada masa lampau, Candi Ratu Boko mencakup reruntuhan candi, gapura, kolam, dan taman yang luas. Keindahan alam dan warisan sejarah membuatnya menjadi tujuan wisata yang menarik, sementara lokasinya yang strategis memungkinkan pengunjung menikmati panorama matahari terbenam yang memukau di kawasan ini.', 4),
-(7, 'Pantai Parangtritis', 'pantai_parangtritis.jpg', 'Pantai Parangtritis terletak di Kabupaten Bantul, Yogyakarta, Indonesia, dan menawarkan pesona alam yang memesona dengan garis pantai yang panjang dan pasir putih yang lembut. Dikelilingi oleh tebing-tebing batu karst yang menjulang tinggi, pantai ini menciptakan pemandangan spektakuler yang memikat para pengunjung. Ombak yang gemuruh dan panorama matahari terbenam yang memukau membuat Parangtritis menjadi destinasi favorit bagi pecinta pantai dan peselancar. Selain keindahan alamnya, Pantai Parangtritis juga memiliki nilai sejarah dan budaya yang kuat, terdapat legenda lokal yang melibatkan Nyai Loro Kidul, ratu laut Jawa yang diyakini memiliki pengaruh mistis di daerah tersebut.', 5),
-(8, 'Pantai Goa Cemara', 'pantai_goa_cemara.png', 'terletak di Bantul, Yogyakarta, menawarkan keindahan alam yang memesona dengan kombinasi pasir putih, batu karang, dan pepohonan cemara yang menjulang. Pantai ini dikenal sebagai destinasi yang tenang dan sejuk, dihiasi dengan goa-goa kecil yang memberikan nuansa mistis. Tersembunyi di balik pepohonan, Goa Cemara memberikan pengalaman pantai yang unik dan berbeda dari destinasi wisata sekitarnya. Letaknya yang tidak terlalu ramai membuatnya menjadi tempat yang cocok untuk bersantai, menikmati matahari terbenam, dan mengeksplorasi keindahan alam pantai yang masih alami.', 5),
-(9, 'Hutan pinus asri ', 'hutan_pinus_asri.png', 'Hutan Pinus Asri di Bantul merupakan sebuah destinasi alam yang menakjubkan di Provinsi Daerah Istimewa Yogyakarta, Indonesia. Terletak di lereng perbukitan yang memukau, hutan ini memanjakan pengunjung dengan keindahan alam yang menyejukkan. Pepohonan pinus yang tinggi dan rapat menciptakan suasana teduh yang menyegarkan, sementara aroma khas hutan pinus memberikan pengalaman unik. Dikelola dengan baik, area ini juga menyediakan fasilitas rekreasi seperti jalur hiking, tempat piknik, dan area bermain anak-anak. Hutan Pinus Asri Bantul menjadi tempat ideal bagi mereka yang mencari ketenangan dan keindahan alam yang memukau, menjadikannya destinasi wisata yang populer di kawasan tersebut.', 5),
-(10, 'Kebun buah mangunan', 'kebun_buah_mangunan.png', 'Kebun Buah Mangunan, terletak di Bantul, Yogyakarta, Indonesia, merupakan destinasi wisata yang memukau dengan keindahan alamnya. Dikelilingi oleh perbukitan hijau yang menawan, kebun buah ini menawarkan pengalaman seru berupa panen buah langsung dari pohonnya. Terkenal dengan suasana sejuknya, Kebun Buah Mangunan juga menyediakan spot-spot menarik untuk menikmati pemandangan spektakuler, seperti terasering perbukitan dan panorama kota di kejauhan. Lokasinya yang strategis membuat kebun buah ini menjadi tempat yang populer bagi para pengunjung yang mencari ketenangan sambil menikmati kekayaan alam Indonesia.', 5),
-(11, 'Bukit panguk kediwung', 'bukit_panguk_kediwung.png', 'Bukit Panguk Kediwung merupakan salah satu spot terbaik untuk menikmati sunrise di area Mangunan. Pemandangannya sangat menarik, banyak spot untuk berfoto.\r\nKalau ke sini jangan sampai kehilangan momentum matahari terbitnya. Bukit tersebut berlokasi di Kediwung, Mangunan, Dlingo, Bantul\r\n', 5),
-(12, 'Pantai Wediombo', 'pantai_wediombo.jpg', 'Pantai Wediombo, terletak di Kabupaten Gunungkidul, Yogyakarta, memukau pengunjung dengan keindahan alamnya yang mempesona. Tersembunyi di antara tebing-tebing karst yang menjulang tinggi, pantai ini menawarkan pemandangan laut yang biru jernih dan pasir putih yang lembut. Suara ombak yang tenang dan angin sepoi-sepoi menambah daya tariknya sebagai tempat ideal untuk bersantai dan menikmati keindahan alam. Pantai Wediombo juga dikenal dengan keberadaan goa-goa kecil yang dapat dijelajahi, menambah kesan petualangan bagi para pengunjung. Lokasinya yang terpencil menambah eksotisme pantai ini, menciptakan pengalaman liburan yang tak terlupakan di tengah pesona alam Gunungkidul.', 2);
+INSERT INTO `gambar_region` (`id_gambar_reg`, `nama_tempat`, `gambar`, `cerita`, `id_daerah`, `trip_cost`) VALUES
+(1, 'Tugu', 'Tugu.jpg', 'Tugu Yogyakarta, juga dikenal sebagai Tugu Pal atau Tugu Jogja, adalah monumen ikonik yang berdiri megah di pusat Kota Yogyakarta, Indonesia. Monumen ini memiliki tinggi sekitar 15,5 meter dan merupakan simbol kekuatan dan kejayaan Kerajaan Mataram Islam. Tugu ini berlokasi di persimpangan Jalan Malioboro dan Jalan Jenderal Sudirman, menjadikannya sebagai pusat lalu lintas dan titik kumpul utama di kota ini. Dirancang pada tahun 1889 oleh seorang arsitek Belanda, Tugu Yogyakarta telah menjadi landmark yang tak terpisahkan dari keindahan budaya dan sejarah kota ini, menarik pengunjung dengan keunikan arsitektur dan makna historisnya.', 1, 'Low_cost'),
+(2, 'Malioboro', 'malioboro.jpg', 'Jalan Malioboro adalah sebuah jalan legendaris yang terletak di pusat kota Yogyakarta, Indonesia. Merupakan pusat perbelanjaan dan kehidupan malam yang terkenal, Jalan Malioboro menawarkan pengalaman berbelanja yang unik dengan berbagai toko tradisional yang menjual kerajinan tangan, batik, dan souvenir khas Yogyakarta. Selain itu, jalan ini juga dipenuhi dengan warung makan dan pedagang kaki lima yang menawarkan hidangan lezat. Di malam hari, suasana di Jalan Malioboro semakin hidup dengan lampu-lampu hias yang menerangi trotoarnya, menciptakan atmosfer yang ramai dan berwarna. Jalan Malioboro tidak hanya menjadi destinasi wisata belanja, tetapi juga mencerminkan kehidupan budaya dan sejarah kota Yogyakarta.', 1, 'Low_cost'),
+(3, 'Taman Sari', 'taman_sari.jpeg', 'Taman Sari, terletak di Yogyakarta, Indonesia, adalah kompleks keraton yang indah dan bersejarah yang dibangun pada abad ke-18 sebagai tempat rekreasi bagi keluarga kerajaan. Terletak hanya sejauh berjalan kaki dari Keraton Yogyakarta, Taman Sari menawarkan pesona arsitektur Jawa klasik dengan kolam-kolam yang indah, paviliun-paviliun, dan taman yang rimbun. Selain sebagai tempat hiburan, Taman Sari juga memiliki makna sejarah sebagai bekas tempat mandi kerajaan. Keindahan dan keanggunan Taman Sari membuatnya menjadi destinasi wisata yang populer di Yogyakarta, mengajak pengunjung untuk menyelami atmosfer keagungan masa lalu kerajaan Jawa.', 1, 'Low_cost'),
+(4, 'Kraton', 'kraton.jpeg', 'Kraton Yogyakarta, juga dikenal sebagai Istana Ngayogyakarta Hadiningrat, merupakan istana resmi Kesultanan Ngayogyakarta Hadiningrat yang terletak di pusat Kota Yogyakarta, Indonesia. Dibangun pada tahun 1755 oleh Sultan Hamengkubuwono I, Kraton Yogyakarta adalah kompleks istana yang mencakup area seluas 14 hektar dengan bangunan-bangunan berarsitektur tradisional Jawa yang megah. Lokasinya yang strategis berada di tengah kota membuat Kraton Yogyakarta menjadi salah satu daya tarik utama bagi wisatawan yang ingin mengenal lebih dekat sejarah dan budaya Jawa. Di dalam kompleks ini, pengunjung dapat menjelajahi museum, galeri seni, serta melihat pertunjukan seni tradisional yang memperkaya pengalaman budaya mereka.', 1, 'Premium'),
+(5, 'Candi Prambanan', 'candi_prambanan.jpeg', 'Candi Prambanan, juga dikenal sebagai Candi Rara Jonggrang, merupakan kompleks candi Hindu abad ke-9 yang terletak sekitar 17 kilometer timur laut Yogyakarta, Indonesia. Dibangun pada masa kerajaan Mataram Kuno, candi ini merupakan masterpiece arsitektur Hindu dengan tiga candi utama yang didedikasikan untuk Trimurti, yakni Brahma, Wisnu, dan Siwa. Keindahan arsitektur Prambanan tercermin dalam relief-releifnya yang menggambarkan kisah epik Ramayana dan Mahabharata. Candi ini menjadi salah satu situs warisan dunia UNESCO dan menarik pengunjung dengan kemegahan dan keindahan arsitektur serta nilai sejarah yang kaya.', 4, 'Average'),
+(6, 'Ratu Boko', 'ratu_boko.jpg', 'Candi Ratu Boko adalah kompleks arkeologi yang terletak di dataran tinggi sekitar 3 kilometer selatan dari Candi Prambanan, di Yogyakarta, Indonesia. Candi ini menawarkan pemandangan spektakuler dari atas bukit, memberikan pengunjung gambaran keindahan arsitektur klasik Jawa. Dikenal sebagai istana kerajaan pada masa lampau, Candi Ratu Boko mencakup reruntuhan candi, gapura, kolam, dan taman yang luas. Keindahan alam dan warisan sejarah membuatnya menjadi tujuan wisata yang menarik, sementara lokasinya yang strategis memungkinkan pengunjung menikmati panorama matahari terbenam yang memukau di kawasan ini.', 4, 'Average'),
+(7, 'Pantai Parangtritis', 'pantai_parangtritis.jpg', 'Pantai Parangtritis terletak di Kabupaten Bantul, Yogyakarta, Indonesia, dan menawarkan pesona alam yang memesona dengan garis pantai yang panjang dan pasir putih yang lembut. Dikelilingi oleh tebing-tebing batu karst yang menjulang tinggi, pantai ini menciptakan pemandangan spektakuler yang memikat para pengunjung. Ombak yang gemuruh dan panorama matahari terbenam yang memukau membuat Parangtritis menjadi destinasi favorit bagi pecinta pantai dan peselancar. Selain keindahan alamnya, Pantai Parangtritis juga memiliki nilai sejarah dan budaya yang kuat, terdapat legenda lokal yang melibatkan Nyai Loro Kidul, ratu laut Jawa yang diyakini memiliki pengaruh mistis di daerah tersebut.', 5, 'Low_cost'),
+(8, 'Pantai Goa Cemara', 'pantai_goa_cemara.png', 'terletak di Bantul, Yogyakarta, menawarkan keindahan alam yang memesona dengan kombinasi pasir putih, batu karang, dan pepohonan cemara yang menjulang. Pantai ini dikenal sebagai destinasi yang tenang dan sejuk, dihiasi dengan goa-goa kecil yang memberikan nuansa mistis. Tersembunyi di balik pepohonan, Goa Cemara memberikan pengalaman pantai yang unik dan berbeda dari destinasi wisata sekitarnya. Letaknya yang tidak terlalu ramai membuatnya menjadi tempat yang cocok untuk bersantai, menikmati matahari terbenam, dan mengeksplorasi keindahan alam pantai yang masih alami.', 5, 'Average'),
+(9, 'Hutan pinus asri ', 'hutan_pinus_asri.png', 'Hutan Pinus Asri di Bantul merupakan sebuah destinasi alam yang menakjubkan di Provinsi Daerah Istimewa Yogyakarta, Indonesia. Terletak di lereng perbukitan yang memukau, hutan ini memanjakan pengunjung dengan keindahan alam yang menyejukkan. Pepohonan pinus yang tinggi dan rapat menciptakan suasana teduh yang menyegarkan, sementara aroma khas hutan pinus memberikan pengalaman unik. Dikelola dengan baik, area ini juga menyediakan fasilitas rekreasi seperti jalur hiking, tempat piknik, dan area bermain anak-anak. Hutan Pinus Asri Bantul menjadi tempat ideal bagi mereka yang mencari ketenangan dan keindahan alam yang memukau, menjadikannya destinasi wisata yang populer di kawasan tersebut.', 5, 'Low_cost'),
+(10, 'Kebun buah mangunan', 'kebun_buah_mangunan.png', 'Kebun Buah Mangunan, terletak di Bantul, Yogyakarta, Indonesia, merupakan destinasi wisata yang memukau dengan keindahan alamnya. Dikelilingi oleh perbukitan hijau yang menawan, kebun buah ini menawarkan pengalaman seru berupa panen buah langsung dari pohonnya. Terkenal dengan suasana sejuknya, Kebun Buah Mangunan juga menyediakan spot-spot menarik untuk menikmati pemandangan spektakuler, seperti terasering perbukitan dan panorama kota di kejauhan. Lokasinya yang strategis membuat kebun buah ini menjadi tempat yang populer bagi para pengunjung yang mencari ketenangan sambil menikmati kekayaan alam Indonesia.', 5, 'Average'),
+(11, 'Bukit panguk kediwung', 'bukit_panguk_kediwung.png', 'Bukit Panguk Kediwung merupakan salah satu spot terbaik untuk menikmati sunrise di area Mangunan. Pemandangannya sangat menarik, banyak spot untuk berfoto.\r\nKalau ke sini jangan sampai kehilangan momentum matahari terbitnya. Bukit tersebut berlokasi di Kediwung, Mangunan, Dlingo, Bantul\r\n', 5, 'Average'),
+(12, 'Pantai Wediombo', 'pantai_wediombo.jpg', 'Pantai Wediombo, terletak di Kabupaten Gunungkidul, Yogyakarta, memukau pengunjung dengan keindahan alamnya yang mempesona. Tersembunyi di antara tebing-tebing karst yang menjulang tinggi, pantai ini menawarkan pemandangan laut yang biru jernih dan pasir putih yang lembut. Suara ombak yang tenang dan angin sepoi-sepoi menambah daya tariknya sebagai tempat ideal untuk bersantai dan menikmati keindahan alam. Pantai Wediombo juga dikenal dengan keberadaan goa-goa kecil yang dapat dijelajahi, menambah kesan petualangan bagi para pengunjung. Lokasinya yang terpencil menambah eksotisme pantai ini, menciptakan pengalaman liburan yang tak terlupakan di tengah pesona alam Gunungkidul.', 2, 'Low_cost');
 
 -- --------------------------------------------------------
 
@@ -345,18 +346,6 @@ INSERT INTO `things` (`id_things`, `judul`, `alamat`, `operasional`, `id_kategor
 (29, 'Kebun The Nglinggo', 'Nglinggo Barat, Pagerharjo, Kec. Samigaluh, Kabupaten Kulon Progo', '7AM – 6PM', 5),
 (30, 'Kalisuci Cave Tubing', 'Jetis, Pacarejo, Semanu, Kabupaten Gunung Kidul', '8AM – 4PM ', 5);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `trip`
---
-
-CREATE TABLE `trip` (
-  `id_trip` int(11) NOT NULL,
-  `judul` varchar(255) NOT NULL,
-  `isi` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
 --
 -- Indexes for dumped tables
 --
@@ -426,12 +415,6 @@ ALTER TABLE `things`
   ADD KEY `id_kategori_things` (`id_kategori_things`);
 
 --
--- Indexes for table `trip`
---
-ALTER TABLE `trip`
-  ADD PRIMARY KEY (`id_trip`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -496,12 +479,6 @@ ALTER TABLE `things`
   MODIFY `id_things` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT for table `trip`
---
-ALTER TABLE `trip`
-  MODIFY `id_trip` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- Constraints for dumped tables
 --
 
@@ -510,24 +487,6 @@ ALTER TABLE `trip`
 --
 ALTER TABLE `events`
   ADD CONSTRAINT `hubungan_event` FOREIGN KEY (`id_kategori_event`) REFERENCES `kategori_event` (`id_kategori_event`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `gambar_region`
---
-ALTER TABLE `gambar_region`
-  ADD CONSTRAINT `hub_region` FOREIGN KEY (`id_daerah`) REFERENCES `daerah_region` (`id_region`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `gambar_things`
---
-ALTER TABLE `gambar_things`
-  ADD CONSTRAINT `hubungan_things_gambar` FOREIGN KEY (`id_things`) REFERENCES `things` (`id_things`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `things`
---
-ALTER TABLE `things`
-  ADD CONSTRAINT `hub_kategori_things` FOREIGN KEY (`id_kategori_things`) REFERENCES `kategori_things` (`id_kategori_things`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
