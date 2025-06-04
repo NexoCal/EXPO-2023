@@ -9,7 +9,7 @@ Please branch off from main and merge it later
 - LandingPage - Merged by Adrian (Nexocal)
 - Adminstuff - Merged by Adrian (Nexocal)
 - BuildV2 - Merged by Adrian (Nexocal)
-- frontend - Ongoing by Gatot (Gatotbaik)
+- frontend - Ongoing by Gatot (AlfianGatot)
 - hotel - Ongoing by Firdaus (FirdausDjohar)
 
 ### Database Responsibility
